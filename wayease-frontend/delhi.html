@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore Delhi - Discover Amazing Places</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#87cfbe',secondary:'#10B981'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+background-color: #f8fafc;
+}
+.scrollbar-hide::-webkit-scrollbar {
+display: none;
+}
+.scrollbar-hide {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: #87cfbe;
+cursor: pointer;
+border: 3px solid white;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.custom-checkbox {
+position: relative;
+display: inline-block;
+width: 20px;
+height: 20px;
+}
+.custom-checkbox input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+width: 20px;
+height: 20px;
+background-color: white;
+border: 2px solid #e5e7eb;
+border-radius: 4px;
+transition: all 0.2s ease;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #87cfbe;
+border-color: #87cfbe;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+left: 6px;
+top: 2px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.toggle-switch {
+position: relative;
+display: inline-block;
+width: 44px;
+height: 24px;
+}
+.toggle-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.toggle-slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #e5e7eb;
+transition: .4s;
+border-radius: 34px;
+}
+.toggle-slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 3px;
+bottom: 3px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .toggle-slider {
+background-color: #87cfbe;
+}
+input:checked + .toggle-slider:before {
+transform: translateX(20px);
+}
+</style>
+</head>
+<body>
+<!-- Header Section -->
+<header class="sticky top-0 z-50 bg-white shadow-sm">
+<div class="container mx-auto px-4 py-4">
+<div class="flex items-center justify-between">
+<h1 class="text-2xl font-bold text-gray-800">Explore <span class="text-primary">Delhi</span></h1>
+<div class="flex items-center space-x-4">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100">
+<i class="ri-notification-3-line text-gray-600"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white">
+<i class="ri-user-line"></i>
+</div>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="mt-4 relative">
+<div class="relative flex items-center">
+<div class="absolute left-3 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-search-line"></i>
+</div>
+<input type="text" placeholder="Search places in Delhi..." class="w-full pl-10 pr-4 py-3 bg-gray-50 border-none rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20">
+<div class="absolute right-3 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-mic-line"></i>
+</div>
+</div>
+</div>
+<!-- Filter Options -->
+<div class="mt-4 flex items-center space-x-2 overflow-x-auto scrollbar-hide pb-2">
+<button class="px-4 py-2 bg-primary text-white rounded-full text-sm whitespace-nowrap !rounded-button">All Places</button>
+<button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap !rounded-button">Historical</button>
+<button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap !rounded-button">Food</button>
+<button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap !rounded-button">Shopping</button>
+<button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap !rounded-button">Religious</button>
+<button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap !rounded-button">Parks</button>
+<button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm whitespace-nowrap !rounded-button">Entertainment</button>
+</div>
+</div>
+</header>
+<main class="container mx-auto px-4 pb-20">
+<!-- Featured Places Carousel -->
+<section class="mt-6">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-xl font-bold text-gray-800">Featured Places</h2>
+      <a href="mumbaiplaces.html" class="text-[#87cfbe] text-sm font-medium hover:underline">View All</a>
+    </div>
+    <!-- Your carousel items go here -->
+  </section>
+<!-- Categories Grid -->
+<section class="mt-8">
+<h2 class="text-xl font-bold text-gray-800 mb-4">Explore by Category</h2>
+<div class="grid grid-cols-3 sm:grid-cols-4 gap-4">
+<!-- Category 1 -->
+<div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-2">
+<i class="ri-building-4-line text-primary text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Historical</span>
+</div>
+<!-- Category 2 -->
+<div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-orange-100 rounded-full mb-2">
+<i class="ri-restaurant-line text-orange-500 text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Street Food</span>
+</div>
+<!-- Category 3 -->
+<div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-2">
+<i class="ri-shopping-bag-3-line text-blue-500 text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Shopping</span>
+</div>
+<!-- Category 4 -->
+<div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full mb-2">
+<i class="ri-plant-line text-green-500 text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Parks</span>
+</div>
+<!-- Category 5 -->
+<div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-purple-100 rounded-full mb-2">
+<i class="ri-building-2-line text-purple-500 text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Religious</span>
+</div>
+<!-- Category 6 -->
+<div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-pink-100 rounded-full mb-2">
+<i class="ri-film-line text-pink-500 text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Entertainment</span>
+</div>
+<!-- Category 7 -->
+<div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-yellow-100 rounded-full mb-2">
+<i class="ri-hotel-line text-yellow-500 text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Hotels</span>
+</div>
+<!-- Category 8 -->
+<div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full mb-2">
+<i class="ri-more-2-fill text-gray-500 text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">More</span>
+</div>
+</div>
+</section>
+<!-- Nearby Places Section with Map Toggle -->
+<section class="mt-8">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold text-gray-800">Nearby Places</h2>
+<div class="flex items-center">
+<span class="text-sm text-gray-600 mr-2">Map View</span>
+<label class="toggle-switch">
+<input type="checkbox" id="mapToggle">
+<span class="toggle-slider"></span>
+</label>
+</div>
+</div>
+<!-- Map View (Hidden by default) -->
+<div id="mapView" class="hidden h-64 rounded-lg overflow-hidden mb-4">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png')"></div>
+</div>
+<!-- Distance Filter -->
+<div class="bg-white rounded-lg shadow-sm p-4 mb-4">
+<div class="flex items-center justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">Distance</span>
+<span class="text-sm text-primary" id="distanceValue">5 km</span>
+</div>
+<input type="range" min="1" max="20" value="5" class="w-full h-2 bg-gray-200 rounded-full appearance-none" id="distanceRange">
+</div>
+<!-- Nearby Places List -->
+<div class="space-y-4">
+<!-- Place 1 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="flex">
+<div class="w-24 h-24 flex-shrink-0">
+<img src="https://public.readdy.ai/ai/img_res/bde809f20fa230ad230849f509db7289.jpg" alt="Lotus Temple" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-3 flex-1">
+<div class="flex items-start justify-between">
+<div>
+<h3 class="font-medium text-gray-800">Lotus Temple</h3>
+<span class="inline-block px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded-full mt-1">Religious</span>
+</div>
+<div class="w-8 h-8 flex items-center justify-center text-gray-400">
+<i class="ri-bookmark-line"></i>
+</div>
+</div>
+<div class="flex items-center mt-2 text-xs text-gray-600">
+<div class="flex text-yellow-400 mr-1">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+<span>4.7 (2.1k)</span>
+<span class="mx-2">•</span>
+<span class="flex items-center">
+<i class="ri-map-pin-line mr-1"></i> 2.1 km
+</span>
+<span class="mx-2">•</span>
+<span class="text-green-600">Open Now</span>
+</div>
+<div class="flex items-center mt-2">
+<div class="w-5 h-5 flex items-center justify-center text-gray-500 mr-3">
+<i class="ri-time-line"></i>
+</div>
+<span class="text-xs text-gray-600">9:00 AM - 5:00 PM</span>
+<div class="w-5 h-5 flex items-center justify-center text-gray-500 mx-3">
+<i class="ri-wallet-3-line"></i>
+</div>
+<span class="text-xs text-gray-600">Free Entry</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Place 2 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="flex">
+<div class="w-24 h-24 flex-shrink-0">
+<img src="https://public.readdy.ai/ai/img_res/de6196d64669d8e4f660659e5c733aec.jpg" alt="Chandni Chowk" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-3 flex-1">
+<div class="flex items-start justify-between">
+<div>
+<h3 class="font-medium text-gray-800">Chandni Chowk</h3>
+<span class="inline-block px-2 py-0.5 bg-orange-100 text-orange-700 text-xs rounded-full mt-1">Shopping & Food</span>
+</div>
+<div class="w-8 h-8 flex items-center justify-center text-gray-400">
+<i class="ri-bookmark-line"></i>
+</div>
+</div>
+<div class="flex items-center mt-2 text-xs text-gray-600">
+<div class="flex text-yellow-400 mr-1">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line"></i>
+</div>
+<span>4.3 (3.5k)</span>
+<span class="mx-2">•</span>
+<span class="flex items-center">
+<i class="ri-map-pin-line mr-1"></i> 3.5 km
+</span>
+<span class="mx-2">•</span>
+<span class="text-green-600">Open Now</span>
+</div>
+<div class="flex items-center mt-2">
+<div class="w-5 h-5 flex items-center justify-center text-gray-500 mr-3">
+<i class="ri-time-line"></i>
+</div>
+<span class="text-xs text-gray-600">10:00 AM - 8:00 PM</span>
+<div class="w-5 h-5 flex items-center justify-center text-gray-500 mx-3">
+<i class="ri-money-dollar-circle-line"></i>
+</div>
+<span class="text-xs text-gray-600">Varies</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Place 3 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="flex">
+<div class="w-24 h-24 flex-shrink-0">
+<img src="https://public.readdy.ai/ai/img_res/e60f03fa245b1ed0fb736996bcad4a86.jpg" alt="Akshardham Temple" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-3 flex-1">
+<div class="flex items-start justify-between">
+<div>
+<h3 class="font-medium text-gray-800">Akshardham Temple</h3>
+<span class="inline-block px-2 py-0.5 bg-purple-100 text-purple-700 text-xs rounded-full mt-1">Religious</span>
+</div>
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-bookmark-fill"></i>
+</div>
+</div>
+<div class="flex items-center mt-2 text-xs text-gray-600">
+<div class="flex text-yellow-400 mr-1">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span>4.8 (5.2k)</span>
+<span class="mx-2">•</span>
+<span class="flex items-center">
+<i class="ri-map-pin-line mr-1"></i> 4.2 km
+</span>
+<span class="mx-2">•</span>
+<span class="text-green-600">Open Now</span>
+</div>
+<div class="flex items-center mt-2">
+<div class="w-5 h-5 flex items-center justify-center text-gray-500 mr-3">
+<i class="ri-time-line"></i>
+</div>
+<span class="text-xs text-gray-600">9:30 AM - 6:30 PM</span>
+<div class="w-5 h-5 flex items-center justify-center text-gray-500 mx-3">
+<i class="ri-wallet-3-line"></i>
+</div>
+<span class="text-xs text-gray-600">Free Entry</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Place 4 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="flex">
+<div class="w-24 h-24 flex-shrink-0">
+<img src="https://public.readdy.ai/ai/img_res/df330cc13093e2a3437d489371086b0f.jpg" alt="Connaught Place" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-3 flex-1">
+<div class="flex items-start justify-between">
+<div>
+<h3 class="font-medium text-gray-800">Connaught Place</h3>
+<span class="inline-block px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded-full mt-1">Shopping</span>
+</div>
+<div class="w-8 h-8 flex items-center justify-center text-gray-400">
+<i class="ri-bookmark-line"></i>
+</div>
+</div>
+<div class="flex items-center mt-2 text-xs text-gray-600">
+<div class="flex text-yellow-400 mr-1">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line"></i>
+</div>
+<span>4.5 (4.1k)</span>
+<span class="mx-2">•</span>
+<span class="flex items-center">
+<i class="ri-map-pin-line mr-1"></i> 5.0 km
+</span>
+<span class="mx-2">•</span>
+<span class="text-green-600">Open Now</span>
+</div>
+<div class="flex items-center mt-2">
+<div class="w-5 h-5 flex items-center justify-center text-gray-500 mr-3">
+<i class="ri-time-line"></i>
+</div>
+<span class="text-xs text-gray-600">10:00 AM - 9:00 PM</span>
+<div class="w-5 h-5 flex items-center justify-center text-gray-500 mx-3">
+<i class="ri-money-dollar-circle-line"></i>
+</div>
+<span class="text-xs text-gray-600">Varies</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-3 mt-4 text-gray-600 bg-gray-100 rounded-lg font-medium !rounded-button whitespace-nowrap">Load More Places</button>
+</section>
+<!-- Trending Places Section -->
+<section class="mt-8">
+<h2 class="text-xl font-bold text-gray-800 mb-4">Trending in Delhi</h2>
+<div class="space-y-4">
+<!-- Trending Place 1 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="relative h-48">
+<img src="https://public.readdy.ai/ai/img_res/aaca0791793e34629e2da10290fa6efb.jpg" alt="Dilli Haat" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4 text-white">
+<h3 class="font-semibold text-lg">Dilli Haat</h3>
+<div class="flex items-center mt-1">
+<div class="flex text-yellow-400 mr-1">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+<span class="text-sm">4.6 (1.8k reviews)</span>
+</div>
+</div>
+<div class="absolute top-3 right-3 bg-white rounded-full p-1.5 shadow-sm">
+<div class="w-6 h-6 flex items-center justify-center text-gray-600">
+<i class="ri-heart-line"></i>
+</div>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center text-sm text-gray-600 mb-2">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-map-pin-line"></i>
+</div>
+<span>INA, South Delhi • 6.2 km away</span>
+</div>
+<p class="text-sm text-gray-600 mb-3">A vibrant marketplace showcasing handicrafts and cultural items from different states of India.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center text-sm text-gray-600">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-time-line"></i>
+</div>
+<span>11:00 AM - 9:00 PM</span>
+</div>
+<span class="text-sm text-gray-600">Entry: ₹30</span>
+</div>
+</div>
+</div>
+<!-- Trending Place 2 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="relative h-48">
+<img src="https://public.readdy.ai/ai/img_res/300add3f63daa3ac4df14f7ebc7354fb.jpg" alt="Hauz Khas Village" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4 text-white">
+<h3 class="font-semibold text-lg">Hauz Khas Village</h3>
+<div class="flex items-center mt-1">
+<div class="flex text-yellow-400 mr-1">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line"></i>
+</div>
+<span class="text-sm">4.4 (2.5k reviews)</span>
+</div>
+</div>
+<div class="absolute top-3 right-3 bg-white rounded-full p-1.5 shadow-sm">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-heart-fill"></i>
+</div>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center text-sm text-gray-600 mb-2">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-map-pin-line"></i>
+</div>
+<span>South Delhi • 8.5 km away</span>
+</div>
+<p class="text-sm text-gray-600 mb-3">Trendy neighborhood with ancient ruins, art galleries, boutiques, and popular restaurants and bars.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center text-sm text-gray-600">
+<div class="w-5 h-5 flex items-center justify-center mr-1">
+<i class="ri-time-line"></i>
+</div>
+<span>10:00 AM - 12:00 AM</span>
+</div>
+<span class="text-sm text-gray-600">Free Entry</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-200 z-40">
+<div class="flex items-center justify-around">
+<a href="#" class="flex flex-col items-center py-2 px-3 text-primary">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-compass-3-fill"></i>
+</div>
+<span class="text-xs mt-1">Explore</span>
+</a>
+<a href="#" class="flex flex-col items-center py-2 px-3 text-gray-500">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-bookmark-line"></i>
+</div>
+<span class="text-xs mt-1">Saved</span>
+</a>
+<a href="#" class="flex flex-col items-center py-2 px-3 text-gray-500">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-map-2-line"></i>
+</div>
+<span class="text-xs mt-1">Map</span>
+</a>
+<a href="#" class="flex flex-col items-center py-2 px-3 text-gray-500">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-user-3-line"></i>
+</div>
+<span class="text-xs mt-1">Profile</span>
+</a>
+</div>
+</nav>
+<script>
+// Distance Range Slider
+const distanceRange = document.getElementById('distanceRange');
+const distanceValue = document.getElementById('distanceValue');
+distanceRange.addEventListener('input', function() {
+distanceValue.textContent = this.value + ' km';
+});
+// Map Toggle
+const mapToggle = document.getElementById('mapToggle');
+const mapView = document.getElementById('mapView');
+mapToggle.addEventListener('change', function() {
+if (this.checked) {
+mapView.classList.remove('hidden');
+} else {
+mapView.classList.add('hidden');
+}
+});
+// Bookmark/Heart Toggle
+document.querySelectorAll('.ri-heart-line, .ri-heart-fill').forEach(icon => {
+icon.parentElement.parentElement.addEventListener('click', function() {
+const iconElement = this.querySelector('i');
+if (iconElement.classList.contains('ri-heart-line')) {
+iconElement.classList.remove('ri-heart-line');
+iconElement.classList.add('ri-heart-fill');
+iconElement.parentElement.classList.remove('text-gray-600');
+iconElement.parentElement.classList.add('text-primary');
+} else {
+iconElement.classList.remove('ri-heart-fill');
+iconElement.classList.add('ri-heart-line');
+iconElement.parentElement.classList.remove('text-primary');
+iconElement.parentElement.classList.add('text-gray-600');
+}
+});
+});
+document.querySelectorAll('.ri-bookmark-line, .ri-bookmark-fill').forEach(icon => {
+icon.parentElement.addEventListener('click', function() {
+const iconElement = this.querySelector('i');
+if (iconElement.classList.contains('ri-bookmark-line')) {
+iconElement.classList.remove('ri-bookmark-line');
+iconElement.classList.add('ri-bookmark-fill');
+this.classList.remove('text-gray-400');
+this.classList.add('text-primary');
+} else {
+iconElement.classList.remove('ri-bookmark-fill');
+iconElement.classList.add('ri-bookmark-line');
+this.classList.remove('text-primary');
+this.classList.add('text-gray-400');
+}
+});
+});
+</script>
+</body>
+</html>

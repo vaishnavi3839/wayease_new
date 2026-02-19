@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WayEase - Auth</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#87cfbe',
+            secondary: '#f8f8f8'
+          },
+          borderRadius: {
+            DEFAULT: '8px',
+            button: '8px'
+          },
+          fontFamily: {
+            pacifico: ['Pacifico', 'cursive']
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+    .background-container {
+      background-image: url('home3.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+    .background-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: -1;
+    }
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+  <div class="background-container"></div>
+  <div class="background-overlay"></div>
+
+  <div class="overlay p-6 rounded-2xl shadow-xl w-full max-w-md">
+    <h1 class="text-3xl font-pacifico text-center text-primary mb-6">WayEase</h1>
+
+    <div id="login-form">
+      <h2 class="text-xl font-semibold text-center text-gray-700 mb-8">Welcome Back</h2>
+      <form id="loginForm" class="space-y-6">
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">Email</label>
+          <input id="loginEmail" type="email" placeholder="Enter your email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required />
+        </div>
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">Password</label>
+          <input id="loginPassword" type="password" placeholder="Enter your password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required />
+        </div>
+        <button type="submit" class="w-full bg-primary text-white font-semibold py-3 rounded-button hover:bg-opacity-90 transition-all">Login</button>
+      </form>
+      <p class="text-center text-sm text-gray-600 mt-6">
+        Don’t have an account?
+        <button onclick="showSignup()" class="text-primary font-medium hover:underline">Sign Up</button>
+      </p>
+    </div>
+
+    <div id="signup-form" class="hidden">
+      <h2 class="text-xl font-semibold text-center text-gray-700 mb-8">Create an Account</h2>
+      <form id="signupForm" class="space-y-6">
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">Full Name</label>
+          <input id="fullName" type="text" placeholder="Enter your full name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required />
+        </div>
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">Email</label>
+          <input id="email" type="email" placeholder="Enter your email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required />
+        </div>
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">Password</label>
+          <input id="password" type="password" placeholder="Create a password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required />
+        </div>
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">Confirm Password</label>
+          <input id="confirmPassword" type="password" placeholder="Confirm your password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required />
+        </div>
+        <button type="submit" class="w-full bg-primary text-white font-semibold py-3 rounded-button hover:bg-opacity-90 transition-all">Sign Up</button>
+      </form>
+      <p class="text-center text-sm text-gray-600 mt-6">
+        Already have an account?
+        <button onclick="showLogin()" class="text-primary font-medium hover:underline">Login</button>
+      </p>
+    </div>
+
+    <div id="welcome-message" class="hidden text-center space-y-4">
+      <h2 class="text-2xl font-semibold text-primary">🎉 Logged in successfully!</h2>
+      <p class="text-gray-700 text-lg">Welcome, <span id="user-name" class="font-bold"></span> 👋</p>
+      <button onclick="logout()" class="bg-red-500 text-white font-semibold px-6 py-2 rounded-button hover:bg-red-600 transition">Logout</button>
+    </div>
+  </div>
+
+  <script>
+    function showSignup() {
+      document.getElementById("login-form").classList.add("hidden");
+      document.getElementById("signup-form").classList.remove("hidden");
+    }
+
+    function showLogin() {
+      document.getElementById("signup-form").classList.add("hidden");
+      document.getElementById("login-form").classList.remove("hidden");
+    }
+
+    function logout() {
+      localStorage.removeItem("userName");
+      window.location.reload();
+    }
+
+    document.getElementById("signupForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const fullName = document.getElementById("fullName").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+      }
+
+      try {
+        const response = await fetch("/api/signup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ fullName, email, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          alert("✅ Signup successful!");
+          localStorage.setItem("wayease_token", data.token);
+          localStorage.setItem("userName", data.fullName);
+          localStorage.setItem("userEmail", email);
+          showLogin();
+        } else {
+          alert("❌ Error: " + (data.message || data.error || "Signup failed"));
+        }
+      } catch (error) {
+        alert("❌ Network error: " + error.message);
+      }
+    });
+
+    document.getElementById("loginForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+
+      try {
+        const response = await fetch("/api/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          alert("✅ Logged in successfully!");
+          localStorage.setItem("userName", data.fullName);
+          localStorage.setItem("userEmail", data.email);
+          localStorage.setItem("wayease_token", data.token); // Save token
+          window.location.href = "index.html";
+        } else {
+          alert("❌ Error: " + (data.message || data.error || "Login failed"));
+        }
+      } catch (error) {
+        alert("❌ Network error: " + error.message);
+      }
+    });
+  </script>
+</body>
+</html>
