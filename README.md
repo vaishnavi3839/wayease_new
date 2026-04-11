@@ -84,7 +84,7 @@ Tech Stack
 - Frontend: HTML, CSS, TailwindCSS, JavaScript
 - Backend: Node.js, Express.js
 - Database: LowDB / JSON
-- Authentication: JWT, Google OAuth, Firebase OTP
+- Authentication: JWT, Google OAuth
 - APIs: Maps, Places API
 
 
