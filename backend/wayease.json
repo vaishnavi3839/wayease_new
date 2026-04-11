@@ -1,0 +1,2894 @@
+{
+  "users": [
+    {
+      "id": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "fullName": "vaishnavi",
+      "email": "vaishnavi.50013@gmail.com",
+      "password": "$2a$10$vebNLgBXOsIW2d3qu/cNd.VDEtyKHPVIHOPS5s3lFbnU0OLzFuPhm",
+      "createdAt": "2026-04-04T07:56:03.834Z"
+    },
+    {
+      "id": "be63ffed-24e8-469e-a940-e3933f6f670a",
+      "fullName": "Test User",
+      "email": "test@example.com",
+      "password": "$2a$10$WCE2v2qzYbNAuO4iEYwj2.tf98MpTEqMQazkVya86xJZF3tzwYGI.",
+      "createdAt": "2026-04-04T08:52:03.082Z"
+    },
+    {
+      "id": "a560607c-03c1-470b-92a2-bc4f74fd628f",
+      "fullName": "Google Explorer",
+      "email": "explorer.google@wayease.demo",
+      "password": "$2a$10$dhURQTp7fGQlH/P9WApqYOEyZo/SN6EKweQkeaBwK4Ms8GwgDXO6G",
+      "createdAt": "2026-04-11T09:23:48.212Z"
+    },
+    {
+      "id": "960a32e4-af97-411b-8769-1c4a02fc1368",
+      "fullName": "vaish",
+      "email": "8333875025@phone.wayease.local",
+      "phone": "8333875025",
+      "password": "$2a$10$leZhuaIRxJUv9Jhq1rfhf.gLUxm5Y.xRKD6YU0Jezj3ZG5qrWXLuK",
+      "createdAt": "2026-04-11T09:24:39.678Z",
+      "preferences": {
+        "homeCity": ""
+      }
+    }
+  ],
+  "wishlists": [
+    {
+      "id": "3c38183e-4a6a-468c-ae47-88ad992f5e81",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "place_id": "html-del-110",
+      "place_name": "Karala",
+      "city": "Delhi",
+      "description": "",
+      "image": "",
+      "rating": null,
+      "addedAt": "2026-04-11T13:42:12.649Z"
+    },
+    {
+      "id": "d881875b-a173-49d5-ba15-ccb7dcc40845",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "place_id": "html-del-117",
+      "place_name": "Rani Bagh",
+      "city": "Delhi",
+      "description": "",
+      "image": "",
+      "rating": null,
+      "addedAt": "2026-04-11T13:42:16.170Z"
+    },
+    {
+      "id": "b4ef2a4a-9f96-435a-9425-8bf4acf602ab",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "place_id": "hyd-5",
+      "place_name": "Paradise Biryani",
+      "city": "Hyderabad",
+      "description": "",
+      "image": "",
+      "rating": null,
+      "addedAt": "2026-04-11T13:42:59.954Z"
+    },
+    {
+      "id": "15426141-37c3-4d39-b943-571e5f731014",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "place_id": "hyd-2",
+      "place_name": "Golconda Fort",
+      "city": "Hyderabad",
+      "description": "",
+      "image": "",
+      "rating": null,
+      "addedAt": "2026-04-11T13:43:02.880Z"
+    }
+  ],
+  "itineraries": [
+    {
+      "id": "49c57e21-a12f-4708-86ee-8290ea4dbe7a",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "city": "bangalore",
+      "days": 2,
+      "title": "The Ultimate 2-Day bangalore Adventure",
+      "summary": "A carefully curated 2-day journey through bangalore tailored to your preferences.",
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "Day 1",
+          "theme": "Discovering bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "MTR Restaurant",
+              "activity": "Explore MTR Restaurant and enjoy the food.",
+              "description": "A highly rated location (4.8 stars) perfect for your trip.",
+              "category": "food",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 1:00 PM",
+              "place": "Toit Brewpub",
+              "activity": "Explore Toit Brewpub and enjoy the nightlife.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "nightlife",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "2:00 PM - 4:00 PM",
+              "place": "Lalbagh Botanical Garden",
+              "activity": "Explore Lalbagh Botanical Garden and enjoy the nature.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "nature",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "5:00 PM - 6:00 PM",
+              "place": "Vidhana Soudha",
+              "activity": "Explore Vidhana Soudha and enjoy the architecture.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "architecture",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "Day 2",
+          "theme": "Discovering bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "Cubbon Park",
+              "activity": "Explore Cubbon Park and enjoy the nature.",
+              "description": "A highly rated location (4.5 stars) perfect for your trip.",
+              "category": "nature",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 3:00 PM",
+              "place": "Nandi Hills",
+              "activity": "Explore Nandi Hills and enjoy the adventure.",
+              "description": "A highly rated location (4.5 stars) perfect for your trip.",
+              "category": "adventure",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "4:00 PM - 6:00 PM",
+              "place": "Bangalore Palace",
+              "activity": "Explore Bangalore Palace and enjoy the history.",
+              "description": "A highly rated location (4.4 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "7:00 PM - 9:00 PM",
+              "place": "Commercial Street",
+              "activity": "Explore Commercial Street and enjoy the shopping.",
+              "description": "A highly rated location (4.3 stars) perfect for your trip.",
+              "category": "shopping",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Stay hydrated",
+        "Book tickets in advance",
+        "Use local transport for convenience"
+      ],
+      "bestTime": "October to March",
+      "estimatedBudget": "₹5000 per person",
+      "preferences": [],
+      "createdAt": "2026-04-04T07:56:55.399Z",
+      "updatedAt": "2026-04-04T07:56:55.399Z"
+    },
+    {
+      "id": "6447a001-1b2f-493b-ac6e-912d9461f4bf",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "city": "bangalore",
+      "days": 2,
+      "title": "The Ultimate 2-Day bangalore Adventure",
+      "summary": "A carefully curated 2-day journey through bangalore tailored to your preferences.",
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "Day 1",
+          "theme": "Discovering bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "MTR Restaurant",
+              "activity": "Explore MTR Restaurant and enjoy the food.",
+              "description": "A highly rated location (4.8 stars) perfect for your trip.",
+              "category": "food",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 1:00 PM",
+              "place": "Toit Brewpub",
+              "activity": "Explore Toit Brewpub and enjoy the nightlife.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "nightlife",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "2:00 PM - 4:00 PM",
+              "place": "Lalbagh Botanical Garden",
+              "activity": "Explore Lalbagh Botanical Garden and enjoy the nature.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "nature",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "5:00 PM - 6:00 PM",
+              "place": "Vidhana Soudha",
+              "activity": "Explore Vidhana Soudha and enjoy the architecture.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "architecture",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "Day 2",
+          "theme": "Discovering bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "Cubbon Park",
+              "activity": "Explore Cubbon Park and enjoy the nature.",
+              "description": "A highly rated location (4.5 stars) perfect for your trip.",
+              "category": "nature",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 3:00 PM",
+              "place": "Nandi Hills",
+              "activity": "Explore Nandi Hills and enjoy the adventure.",
+              "description": "A highly rated location (4.5 stars) perfect for your trip.",
+              "category": "adventure",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "4:00 PM - 6:00 PM",
+              "place": "Bangalore Palace",
+              "activity": "Explore Bangalore Palace and enjoy the history.",
+              "description": "A highly rated location (4.4 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "7:00 PM - 9:00 PM",
+              "place": "Commercial Street",
+              "activity": "Explore Commercial Street and enjoy the shopping.",
+              "description": "A highly rated location (4.3 stars) perfect for your trip.",
+              "category": "shopping",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Stay hydrated",
+        "Book tickets in advance",
+        "Use local transport for convenience"
+      ],
+      "bestTime": "October to March",
+      "estimatedBudget": "₹5000 per person",
+      "preferences": [],
+      "createdAt": "2026-04-04T08:02:39.882Z",
+      "updatedAt": "2026-04-04T08:02:39.882Z"
+    },
+    {
+      "id": "e073dcc8-a917-460f-95d7-49ac57100838",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "city": "Bangalore",
+      "days": 2,
+      "title": "The Ultimate 2-Day Bangalore Adventure",
+      "summary": "A carefully curated 2-day journey through Bangalore tailored to your preferences.",
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "Day 1",
+          "theme": "Discovering Bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "MTR Restaurant",
+              "activity": "Explore MTR Restaurant and enjoy the food.",
+              "description": "A highly rated location (4.8 stars) perfect for your trip.",
+              "category": "food",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 1:00 PM",
+              "place": "Toit Brewpub",
+              "activity": "Explore Toit Brewpub and enjoy the nightlife.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "nightlife",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "2:00 PM - 4:00 PM",
+              "place": "Lalbagh Botanical Garden",
+              "activity": "Explore Lalbagh Botanical Garden and enjoy the nature.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "nature",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "5:00 PM - 6:00 PM",
+              "place": "Vidhana Soudha",
+              "activity": "Explore Vidhana Soudha and enjoy the architecture.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "architecture",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "Day 2",
+          "theme": "Discovering Bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "Cubbon Park",
+              "activity": "Explore Cubbon Park and enjoy the nature.",
+              "description": "A highly rated location (4.5 stars) perfect for your trip.",
+              "category": "nature",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 3:00 PM",
+              "place": "Nandi Hills",
+              "activity": "Explore Nandi Hills and enjoy the adventure.",
+              "description": "A highly rated location (4.5 stars) perfect for your trip.",
+              "category": "adventure",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "4:00 PM - 6:00 PM",
+              "place": "Bangalore Palace",
+              "activity": "Explore Bangalore Palace and enjoy the history.",
+              "description": "A highly rated location (4.4 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "7:00 PM - 9:00 PM",
+              "place": "Commercial Street",
+              "activity": "Explore Commercial Street and enjoy the shopping.",
+              "description": "A highly rated location (4.3 stars) perfect for your trip.",
+              "category": "shopping",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Stay hydrated",
+        "Book tickets in advance",
+        "Use local transport for convenience"
+      ],
+      "bestTime": "October to March",
+      "estimatedBudget": "₹5000 per person",
+      "preferences": [],
+      "createdAt": "2026-04-10T19:02:35.420Z",
+      "updatedAt": "2026-04-10T19:02:35.421Z"
+    },
+    {
+      "id": "56535361-8512-4d32-a54d-246dcbf79421",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "city": "Bangalore",
+      "days": 2,
+      "title": "The Ultimate 2-Day Bangalore Adventure",
+      "summary": "A carefully curated 2-day journey through Bangalore tailored to your preferences.",
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "Day 1",
+          "theme": "Discovering Bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "MTR Restaurant",
+              "activity": "Explore MTR Restaurant and enjoy the food.",
+              "description": "A highly rated location (4.8 stars) perfect for your trip.",
+              "category": "food",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 1:00 PM",
+              "place": "Toit Brewpub",
+              "activity": "Explore Toit Brewpub and enjoy the nightlife.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "nightlife",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "2:00 PM - 4:00 PM",
+              "place": "Lalbagh Botanical Garden",
+              "activity": "Explore Lalbagh Botanical Garden and enjoy the nature.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "nature",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "5:00 PM - 6:00 PM",
+              "place": "Vidhana Soudha",
+              "activity": "Explore Vidhana Soudha and enjoy the architecture.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "architecture",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "Day 2",
+          "theme": "Discovering Bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "Cubbon Park",
+              "activity": "Explore Cubbon Park and enjoy the nature.",
+              "description": "A highly rated location (4.5 stars) perfect for your trip.",
+              "category": "nature",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 3:00 PM",
+              "place": "Nandi Hills",
+              "activity": "Explore Nandi Hills and enjoy the adventure.",
+              "description": "A highly rated location (4.5 stars) perfect for your trip.",
+              "category": "adventure",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "4:00 PM - 6:00 PM",
+              "place": "Bangalore Palace",
+              "activity": "Explore Bangalore Palace and enjoy the history.",
+              "description": "A highly rated location (4.4 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "7:00 PM - 9:00 PM",
+              "place": "Commercial Street",
+              "activity": "Explore Commercial Street and enjoy the shopping.",
+              "description": "A highly rated location (4.3 stars) perfect for your trip.",
+              "category": "shopping",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Stay hydrated",
+        "Book tickets in advance",
+        "Use local transport for convenience"
+      ],
+      "bestTime": "October to March",
+      "estimatedBudget": "₹5000 per person",
+      "preferences": [],
+      "createdAt": "2026-04-10T19:02:35.748Z",
+      "updatedAt": "2026-04-10T19:02:35.748Z"
+    },
+    {
+      "id": "4bcb11ba-aa17-4215-8725-10859dcae270",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "city": "Bangalore",
+      "days": 2,
+      "title": "The Ultimate 2-Day Bangalore Adventure",
+      "summary": "A carefully curated 2-day journey through Bangalore tailored to your preferences.",
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "Day 1",
+          "theme": "Discovering Bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "MTR Restaurant",
+              "activity": "Explore MTR Restaurant and enjoy the food.",
+              "description": "A highly rated location (4.8 stars) perfect for your trip.",
+              "category": "food",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 1:00 PM",
+              "place": "Toit Brewpub",
+              "activity": "Explore Toit Brewpub and enjoy the nightlife.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "nightlife",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "2:00 PM - 4:00 PM",
+              "place": "Lalbagh Botanical Garden",
+              "activity": "Explore Lalbagh Botanical Garden and enjoy the nature.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "nature",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "5:00 PM - 6:00 PM",
+              "place": "Vidhana Soudha",
+              "activity": "Explore Vidhana Soudha and enjoy the architecture.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "architecture",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "Day 2",
+          "theme": "Discovering Bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "Cubbon Park",
+              "activity": "Explore Cubbon Park and enjoy the nature.",
+              "description": "A highly rated location (4.5 stars) perfect for your trip.",
+              "category": "nature",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 3:00 PM",
+              "place": "Nandi Hills",
+              "activity": "Explore Nandi Hills and enjoy the adventure.",
+              "description": "A highly rated location (4.5 stars) perfect for your trip.",
+              "category": "adventure",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "4:00 PM - 6:00 PM",
+              "place": "Bangalore Palace",
+              "activity": "Explore Bangalore Palace and enjoy the history.",
+              "description": "A highly rated location (4.4 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "7:00 PM - 9:00 PM",
+              "place": "Commercial Street",
+              "activity": "Explore Commercial Street and enjoy the shopping.",
+              "description": "A highly rated location (4.3 stars) perfect for your trip.",
+              "category": "shopping",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Stay hydrated",
+        "Book tickets in advance",
+        "Use local transport for convenience"
+      ],
+      "bestTime": "October to March",
+      "estimatedBudget": "₹5000 per person",
+      "preferences": [],
+      "createdAt": "2026-04-10T19:02:35.997Z",
+      "updatedAt": "2026-04-10T19:02:35.997Z"
+    },
+    {
+      "id": "6c21bfc2-e5bf-4dce-9536-9c6a6f0509b8",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "city": "Bangalore",
+      "days": 2,
+      "title": "The Ultimate 2-Day Bangalore Adventure",
+      "summary": "A carefully curated 2-day journey through Bangalore tailored to your preferences.",
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "Day 1",
+          "theme": "Discovering Bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "MTR Restaurant",
+              "activity": "Explore MTR Restaurant and enjoy the food.",
+              "description": "A highly rated location (4.8 stars) perfect for your trip.",
+              "category": "food",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 1:00 PM",
+              "place": "Toit Brewpub",
+              "activity": "Explore Toit Brewpub and enjoy the nightlife.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "nightlife",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "2:00 PM - 4:00 PM",
+              "place": "Lalbagh Botanical Garden",
+              "activity": "Explore Lalbagh Botanical Garden and enjoy the nature.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "nature",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "5:00 PM - 6:00 PM",
+              "place": "Vidhana Soudha",
+              "activity": "Explore Vidhana Soudha and enjoy the architecture.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "architecture",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "Day 2",
+          "theme": "Discovering Bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "Cubbon Park",
+              "activity": "Explore Cubbon Park and enjoy the nature.",
+              "description": "A highly rated location (4.5 stars) perfect for your trip.",
+              "category": "nature",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 3:00 PM",
+              "place": "Nandi Hills",
+              "activity": "Explore Nandi Hills and enjoy the adventure.",
+              "description": "A highly rated location (4.5 stars) perfect for your trip.",
+              "category": "adventure",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "4:00 PM - 6:00 PM",
+              "place": "Bangalore Palace",
+              "activity": "Explore Bangalore Palace and enjoy the history.",
+              "description": "A highly rated location (4.4 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "7:00 PM - 9:00 PM",
+              "place": "Commercial Street",
+              "activity": "Explore Commercial Street and enjoy the shopping.",
+              "description": "A highly rated location (4.3 stars) perfect for your trip.",
+              "category": "shopping",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Stay hydrated",
+        "Book tickets in advance",
+        "Use local transport for convenience"
+      ],
+      "bestTime": "October to March",
+      "estimatedBudget": "₹5000 per person",
+      "preferences": [],
+      "createdAt": "2026-04-10T19:03:16.265Z",
+      "updatedAt": "2026-04-10T19:03:16.265Z"
+    },
+    {
+      "id": "81bec7a3-77bc-4108-8bb3-3acbfd780271",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "city": "bagalore",
+      "days": 3,
+      "title": "The Ultimate 3-Day bagalore Adventure",
+      "summary": "A carefully curated 3-day journey through bagalore tailored to your preferences.",
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "Day 1",
+          "theme": "Discovering bagalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "bagalore Grand Park",
+              "activity": "Explore bagalore Grand Park and enjoy the nature.",
+              "description": "A highly rated location (4.8 stars) perfect for your trip.",
+              "category": "nature",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 1:00 PM",
+              "place": "bagalore Local Bistro",
+              "activity": "Explore bagalore Local Bistro and enjoy the food.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "food",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "2:00 PM - 5:00 PM",
+              "place": "bagalore Historical Museum",
+              "activity": "Explore bagalore Historical Museum and enjoy the history.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "6:00 PM - 8:00 PM",
+              "place": "bagalore Central Plaza",
+              "activity": "Explore bagalore Central Plaza and enjoy the shopping.",
+              "description": "A highly rated location (4.5 stars) perfect for your trip.",
+              "category": "shopping",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "Day 2",
+          "theme": "Discovering bagalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "bagalore Grand Park",
+              "activity": "Explore bagalore Grand Park and enjoy the nature.",
+              "description": "A highly rated location (4.8 stars) perfect for your trip.",
+              "category": "nature",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 1:00 PM",
+              "place": "bagalore Local Bistro",
+              "activity": "Explore bagalore Local Bistro and enjoy the food.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "food",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "date": "Day 3",
+          "theme": "Discovering bagalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 11:00 AM",
+              "place": "bagalore Historical Museum",
+              "activity": "Explore bagalore Historical Museum and enjoy the history.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "12:00 PM - 2:00 PM",
+              "place": "bagalore Central Plaza",
+              "activity": "Explore bagalore Central Plaza and enjoy the shopping.",
+              "description": "A highly rated location (4.5 stars) perfect for your trip.",
+              "category": "shopping",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Stay hydrated",
+        "Book tickets in advance",
+        "Use local transport for convenience"
+      ],
+      "bestTime": "October to March",
+      "estimatedBudget": "₹6500 per person",
+      "preferences": [],
+      "createdAt": "2026-04-10T19:12:49.217Z",
+      "updatedAt": "2026-04-10T19:12:49.217Z"
+    },
+    {
+      "id": "67167c21-4aa6-41b9-b616-26c22f727d2c",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "city": "delhi",
+      "days": 3,
+      "title": "The Ultimate 3-Day delhi Adventure",
+      "summary": "A carefully curated 3-day journey through delhi tailored to your preferences.",
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "Day 1",
+          "theme": "Discovering delhi",
+          "activities": [
+            {
+              "time": "8:00 AM - 9:00 AM",
+              "place": "India Gate",
+              "activity": "Explore India Gate and enjoy the architecture.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "architecture",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "10:00 AM - 12:00 PM",
+              "place": "Red Fort",
+              "activity": "Explore Red Fort and enjoy the history.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "1:00 PM - 3:00 PM",
+              "place": "Lotus Temple",
+              "activity": "Explore Lotus Temple and enjoy the cultural sites.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "4:00 PM - 6:00 PM",
+              "place": "Qutub Minar",
+              "activity": "Explore Qutub Minar and enjoy the history.",
+              "description": "A highly rated location (4.5 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "Day 2",
+          "theme": "Discovering delhi",
+          "activities": [
+            {
+              "time": "8:00 AM - 9:00 AM",
+              "place": "Paranthe Wali Gali",
+              "activity": "Explore Paranthe Wali Gali and enjoy the street food.",
+              "description": "A highly rated location (4.4 stars) perfect for your trip.",
+              "category": "street food",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "10:00 AM - 1:00 PM",
+              "place": "Chandni Chowk",
+              "activity": "Explore Chandni Chowk and enjoy the shopping.",
+              "description": "A highly rated location (4.3 stars) perfect for your trip.",
+              "category": "shopping",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "date": "Day 3",
+          "theme": "Discovering delhi",
+          "activities": [
+            {
+              "time": "8:00 AM - 9:00 AM",
+              "place": "India Gate",
+              "activity": "Explore India Gate and enjoy the architecture.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "architecture",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "10:00 AM - 12:00 PM",
+              "place": "Red Fort",
+              "activity": "Explore Red Fort and enjoy the history.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Stay hydrated",
+        "Book tickets in advance",
+        "Use local transport for convenience"
+      ],
+      "bestTime": "October to March",
+      "estimatedBudget": "₹6500 per person",
+      "preferences": [],
+      "createdAt": "2026-04-10T19:13:36.056Z",
+      "updatedAt": "2026-04-10T19:13:36.056Z"
+    },
+    {
+      "id": "0524fef7-3c47-48cb-848c-eddf4161721c",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "city": "delhi",
+      "days": 2,
+      "title": "The Ultimate 2-Day delhi Adventure",
+      "summary": "A carefully curated 2-day journey through delhi tailored to your preferences.",
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "Day 1",
+          "theme": "Discovering delhi",
+          "activities": [
+            {
+              "time": "8:00 AM - 9:00 AM",
+              "place": "India Gate",
+              "activity": "Explore India Gate and enjoy the architecture.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "architecture",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "10:00 AM - 12:00 PM",
+              "place": "Red Fort",
+              "activity": "Explore Red Fort and enjoy the history.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "1:00 PM - 3:00 PM",
+              "place": "Lotus Temple",
+              "activity": "Explore Lotus Temple and enjoy the cultural sites.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "4:00 PM - 6:00 PM",
+              "place": "Qutub Minar",
+              "activity": "Explore Qutub Minar and enjoy the history.",
+              "description": "A highly rated location (4.5 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "Day 2",
+          "theme": "Discovering delhi",
+          "activities": [
+            {
+              "time": "8:00 AM - 9:00 AM",
+              "place": "Paranthe Wali Gali",
+              "activity": "Explore Paranthe Wali Gali and enjoy the street food.",
+              "description": "A highly rated location (4.4 stars) perfect for your trip.",
+              "category": "street food",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "10:00 AM - 1:00 PM",
+              "place": "Chandni Chowk",
+              "activity": "Explore Chandni Chowk and enjoy the shopping.",
+              "description": "A highly rated location (4.3 stars) perfect for your trip.",
+              "category": "shopping",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Stay hydrated",
+        "Book tickets in advance",
+        "Use local transport for convenience"
+      ],
+      "bestTime": "October to March",
+      "estimatedBudget": "₹5000 per person",
+      "preferences": [],
+      "createdAt": "2026-04-10T19:16:47.058Z",
+      "updatedAt": "2026-04-10T19:16:47.058Z"
+    },
+    {
+      "id": "34f5ed4c-dc55-4365-8641-23db75436f94",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "city": "delhi",
+      "days": 2,
+      "title": "The Ultimate 2-Day delhi Adventure",
+      "summary": "A carefully curated 2-day journey through delhi tailored to your preferences.",
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "Day 1",
+          "theme": "Discovering delhi",
+          "activities": [
+            {
+              "time": "8:00 AM - 9:00 AM",
+              "place": "India Gate",
+              "activity": "Explore India Gate and enjoy the architecture.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "architecture",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "10:00 AM - 12:00 PM",
+              "place": "Red Fort",
+              "activity": "Explore Red Fort and enjoy the history.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "1:00 PM - 3:00 PM",
+              "place": "Lotus Temple",
+              "activity": "Explore Lotus Temple and enjoy the cultural sites.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "4:00 PM - 6:00 PM",
+              "place": "Qutub Minar",
+              "activity": "Explore Qutub Minar and enjoy the history.",
+              "description": "A highly rated location (4.5 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "Day 2",
+          "theme": "Discovering delhi",
+          "activities": [
+            {
+              "time": "8:00 AM - 9:00 AM",
+              "place": "Paranthe Wali Gali",
+              "activity": "Explore Paranthe Wali Gali and enjoy the street food.",
+              "description": "A highly rated location (4.4 stars) perfect for your trip.",
+              "category": "street food",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "10:00 AM - 1:00 PM",
+              "place": "Chandni Chowk",
+              "activity": "Explore Chandni Chowk and enjoy the shopping.",
+              "description": "A highly rated location (4.3 stars) perfect for your trip.",
+              "category": "shopping",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Stay hydrated",
+        "Book tickets in advance",
+        "Use local transport for convenience"
+      ],
+      "bestTime": "October to March",
+      "estimatedBudget": "₹5000 per person",
+      "preferences": [],
+      "createdAt": "2026-04-10T19:16:57.229Z",
+      "updatedAt": "2026-04-10T19:16:57.229Z"
+    },
+    {
+      "id": "005bd2c6-b638-4b6e-9bf6-4753618cdbd3",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "city": "Delhi",
+      "days": 2,
+      "title": "The Ultimate 2-Day Delhi Adventure",
+      "summary": "A carefully curated 2-day journey through Delhi tailored to your preferences.",
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "Day 1",
+          "theme": "Discovering Delhi",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "Chanakyapuri",
+              "activity": "Explore Chanakyapuri and enjoy the sightseeing.",
+              "description": "A highly rated location (5 stars) perfect for your trip.",
+              "category": "sightseeing",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 12:00 PM",
+              "place": "Maujpur",
+              "activity": "Explore Maujpur and enjoy the sightseeing.",
+              "description": "A highly rated location (4.9 stars) perfect for your trip.",
+              "category": "sightseeing",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "1:00 PM - 2:00 PM",
+              "place": "Jor Bagh",
+              "activity": "Explore Jor Bagh and enjoy the sightseeing.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "sightseeing",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "3:00 PM - 4:00 PM",
+              "place": "Bawana",
+              "activity": "Explore Bawana and enjoy the sightseeing.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "sightseeing",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "Day 2",
+          "theme": "Discovering Delhi",
+          "activities": [
+            {
+              "time": "8:00 AM - 11:00 AM",
+              "place": "Hauz Khas Village",
+              "activity": "Explore Hauz Khas Village and enjoy the food.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "food",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "12:00 PM - 1:00 PM",
+              "place": "Neeti Bagh",
+              "activity": "Explore Neeti Bagh and enjoy the sightseeing.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "sightseeing",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "2:00 PM - 4:00 PM",
+              "place": "Dhaula Kuan",
+              "activity": "Explore Dhaula Kuan and enjoy the sightseeing.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "sightseeing",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "5:00 PM - 6:00 PM",
+              "place": "India Gate",
+              "activity": "Explore India Gate and enjoy the history.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Stay hydrated",
+        "Book tickets in advance",
+        "Use local transport for convenience"
+      ],
+      "bestTime": "October to March",
+      "estimatedBudget": "₹5000 per person",
+      "preferences": [],
+      "createdAt": "2026-04-11T09:06:37.732Z",
+      "updatedAt": "2026-04-11T09:06:37.732Z"
+    },
+    {
+      "id": "bc5d0d0b-6729-4311-b5c3-41bc855f3c4a",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "city": "Mumbai",
+      "days": 2,
+      "title": "The Ultimate 2-Day Mumbai Adventure",
+      "summary": "A carefully curated 2-day journey through Mumbai tailored to your preferences.",
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "Day 1",
+          "theme": "Discovering Mumbai",
+          "activities": [
+            {
+              "time": "8:00 AM - 9:00 AM",
+              "place": "Bandra-Worli Sea Link",
+              "activity": "Explore Bandra-Worli Sea Link and enjoy the sightseeing.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "sightseeing",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "10:00 AM - 12:00 PM",
+              "place": "Chhatrapati Shivaji Maharaj Terminus",
+              "activity": "Explore Chhatrapati Shivaji Maharaj Terminus and enjoy the sightseeing.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "sightseeing",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "1:00 PM - 3:00 PM",
+              "place": "Gateway of India",
+              "activity": "Explore Gateway of India and enjoy the history.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "4:00 PM - 6:00 PM",
+              "place": "Marine Drive",
+              "activity": "Explore Marine Drive and enjoy the sightseeing.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "sightseeing",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "Day 2",
+          "theme": "Discovering Mumbai",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "The Taj Mahal Palace",
+              "activity": "Explore The Taj Mahal Palace and enjoy the hotels.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "hotels",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 12:00 PM",
+              "place": "Babulnath Temple",
+              "activity": "Explore Babulnath Temple and enjoy the cultural sites.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "1:00 PM - 3:00 PM",
+              "place": "The Bombay Canteen",
+              "activity": "Explore The Bombay Canteen and enjoy the food.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "food",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "4:00 PM - 6:00 PM",
+              "place": "Dishoom",
+              "activity": "Explore Dishoom and enjoy the food.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "food",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Stay hydrated",
+        "Book tickets in advance",
+        "Use local transport for convenience"
+      ],
+      "bestTime": "October to March",
+      "estimatedBudget": "₹5000 per person",
+      "preferences": [],
+      "createdAt": "2026-04-11T13:36:36.594Z",
+      "updatedAt": "2026-04-11T13:36:36.594Z"
+    },
+    {
+      "id": "4c1aa58a-7463-4fec-9a05-d48d84a21de5",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "city": "Bangalore",
+      "days": 2,
+      "title": "The Ultimate 2-Day Bangalore Adventure",
+      "summary": "A carefully curated 2-day journey through Bangalore tailored to your preferences.",
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "Day 1",
+          "theme": "Discovering Bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "ISKCON Temple",
+              "activity": "Explore ISKCON Temple and enjoy the cultural sites.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 1:00 PM",
+              "place": "Lalbagh Botanical Garden",
+              "activity": "Explore Lalbagh Botanical Garden and enjoy the nature.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "nature",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "2:00 PM - 3:00 PM",
+              "place": "Vidhana Soudha",
+              "activity": "Explore Vidhana Soudha and enjoy the sightseeing.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "sightseeing",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "4:00 PM - 5:00 PM",
+              "place": "St. Mary’s Basilica",
+              "activity": "Explore St. Mary’s Basilica and enjoy the cultural sites.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "Day 2",
+          "theme": "Discovering Bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "Visvesvaraya Industrial & Technological Museum",
+              "activity": "Explore Visvesvaraya Industrial & Technological Museum and enjoy the history.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 2:00 PM",
+              "place": "VR Bengaluru",
+              "activity": "Explore VR Bengaluru and enjoy the shopping.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "shopping",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "3:00 PM - 4:00 PM",
+              "place": "Gavi Gangadhareshwara Temple",
+              "activity": "Explore Gavi Gangadhareshwara Temple and enjoy the cultural sites.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "5:00 PM - 6:00 PM",
+              "place": "Banashankari Temple",
+              "activity": "Explore Banashankari Temple and enjoy the cultural sites.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Stay hydrated",
+        "Book tickets in advance",
+        "Use local transport for convenience"
+      ],
+      "bestTime": "October to March",
+      "estimatedBudget": "₹5000 per person",
+      "preferences": [],
+      "createdAt": "2026-04-11T13:41:18.434Z",
+      "updatedAt": "2026-04-11T13:41:18.434Z"
+    },
+    {
+      "id": "84bef445-e396-4ff5-aaeb-525a039d69b4",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "city": "Bangalore",
+      "days": 2,
+      "title": "The Ultimate 2-Day Bangalore Adventure",
+      "summary": "A carefully curated 2-day journey through Bangalore tailored to your preferences.",
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "Day 1",
+          "theme": "Discovering Bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "ISKCON Temple",
+              "activity": "Explore ISKCON Temple and enjoy the cultural sites.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 1:00 PM",
+              "place": "Lalbagh Botanical Garden",
+              "activity": "Explore Lalbagh Botanical Garden and enjoy the nature.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "nature",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "2:00 PM - 3:00 PM",
+              "place": "Vidhana Soudha",
+              "activity": "Explore Vidhana Soudha and enjoy the sightseeing.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "sightseeing",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "4:00 PM - 5:00 PM",
+              "place": "St. Mary’s Basilica",
+              "activity": "Explore St. Mary’s Basilica and enjoy the cultural sites.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "Day 2",
+          "theme": "Discovering Bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "Visvesvaraya Industrial & Technological Museum",
+              "activity": "Explore Visvesvaraya Industrial & Technological Museum and enjoy the history.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 2:00 PM",
+              "place": "VR Bengaluru",
+              "activity": "Explore VR Bengaluru and enjoy the shopping.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "shopping",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "3:00 PM - 4:00 PM",
+              "place": "Gavi Gangadhareshwara Temple",
+              "activity": "Explore Gavi Gangadhareshwara Temple and enjoy the cultural sites.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "5:00 PM - 6:00 PM",
+              "place": "Banashankari Temple",
+              "activity": "Explore Banashankari Temple and enjoy the cultural sites.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Stay hydrated",
+        "Book tickets in advance",
+        "Use local transport for convenience"
+      ],
+      "bestTime": "October to March",
+      "estimatedBudget": "₹5000 per person",
+      "preferences": [],
+      "createdAt": "2026-04-11T14:10:50.195Z",
+      "updatedAt": "2026-04-11T14:10:50.195Z"
+    },
+    {
+      "id": "7a84fd8a-b83d-441e-bea4-376c0bc5bea6",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "city": "Bangalore",
+      "days": 2,
+      "title": "The Ultimate 2-Day Bangalore Adventure",
+      "summary": "A carefully curated 2-day journey through Bangalore tailored to your preferences.",
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "Day 1",
+          "theme": "Discovering Bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "ISKCON Temple",
+              "activity": "Explore ISKCON Temple and enjoy the cultural sites.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 1:00 PM",
+              "place": "Lalbagh Botanical Garden",
+              "activity": "Explore Lalbagh Botanical Garden and enjoy the nature.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "nature",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "2:00 PM - 3:00 PM",
+              "place": "Vidhana Soudha",
+              "activity": "Explore Vidhana Soudha and enjoy the sightseeing.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "sightseeing",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "4:00 PM - 5:00 PM",
+              "place": "St. Mary’s Basilica",
+              "activity": "Explore St. Mary’s Basilica and enjoy the cultural sites.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "Day 2",
+          "theme": "Discovering Bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "Visvesvaraya Industrial & Technological Museum",
+              "activity": "Explore Visvesvaraya Industrial & Technological Museum and enjoy the history.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 2:00 PM",
+              "place": "VR Bengaluru",
+              "activity": "Explore VR Bengaluru and enjoy the shopping.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "shopping",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "3:00 PM - 4:00 PM",
+              "place": "Gavi Gangadhareshwara Temple",
+              "activity": "Explore Gavi Gangadhareshwara Temple and enjoy the cultural sites.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "5:00 PM - 6:00 PM",
+              "place": "Banashankari Temple",
+              "activity": "Explore Banashankari Temple and enjoy the cultural sites.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Stay hydrated",
+        "Book tickets in advance",
+        "Use local transport for convenience"
+      ],
+      "bestTime": "October to March",
+      "estimatedBudget": "₹5000 per person",
+      "preferences": [],
+      "createdAt": "2026-04-11T14:11:53.338Z",
+      "updatedAt": "2026-04-11T14:11:53.338Z"
+    },
+    {
+      "id": "1548b3b0-0218-4ffb-89cb-ea4a2818b3c1",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "city": "Bangalore",
+      "days": 2,
+      "title": "The Ultimate 2-Day Bangalore Adventure",
+      "summary": "A carefully curated 2-day journey through Bangalore tailored to your preferences.",
+      "itinerary": [
+        {
+          "day": 1,
+          "date": "Day 1",
+          "theme": "Discovering Bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "ISKCON Temple",
+              "activity": "Explore ISKCON Temple and enjoy the cultural sites.",
+              "description": "A highly rated location (4.7 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 1:00 PM",
+              "place": "Lalbagh Botanical Garden",
+              "activity": "Explore Lalbagh Botanical Garden and enjoy the nature.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "nature",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "2:00 PM - 3:00 PM",
+              "place": "Vidhana Soudha",
+              "activity": "Explore Vidhana Soudha and enjoy the sightseeing.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "sightseeing",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "4:00 PM - 5:00 PM",
+              "place": "St. Mary’s Basilica",
+              "activity": "Explore St. Mary’s Basilica and enjoy the cultural sites.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "date": "Day 2",
+          "theme": "Discovering Bangalore",
+          "activities": [
+            {
+              "time": "8:00 AM - 10:00 AM",
+              "place": "Visvesvaraya Industrial & Technological Museum",
+              "activity": "Explore Visvesvaraya Industrial & Technological Museum and enjoy the history.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "history",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "11:00 AM - 2:00 PM",
+              "place": "VR Bengaluru",
+              "activity": "Explore VR Bengaluru and enjoy the shopping.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "shopping",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "3:00 PM - 4:00 PM",
+              "place": "Gavi Gangadhareshwara Temple",
+              "activity": "Explore Gavi Gangadhareshwara Temple and enjoy the cultural sites.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            },
+            {
+              "time": "5:00 PM - 6:00 PM",
+              "place": "Banashankari Temple",
+              "activity": "Explore Banashankari Temple and enjoy the cultural sites.",
+              "description": "A highly rated location (4.6 stars) perfect for your trip.",
+              "category": "cultural sites",
+              "tips": "Wear comfortable shoes and carry water."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Stay hydrated",
+        "Book tickets in advance",
+        "Use local transport for convenience"
+      ],
+      "bestTime": "October to March",
+      "estimatedBudget": "₹5000 per person",
+      "preferences": [],
+      "createdAt": "2026-04-11T14:23:08.850Z",
+      "updatedAt": "2026-04-11T14:23:08.850Z"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "a28c8b41-d630-4298-bcbf-4e42eb192d74",
+      "placeId": "goa-1",
+      "userId": "seed-u-0-0",
+      "userName": "Priya S.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Visited on a weekday — barely any crowd. Great for photos and the staff was helpful.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-11T08:56:11.024Z"
+    },
+    {
+      "id": "1c0e558c-59e8-4c34-8905-60dcebbb4fbc",
+      "placeId": "goa-1",
+      "userId": "seed-u-0-1",
+      "userName": "Rahul M.",
+      "rating": 4,
+      "title": "",
+      "text": "Perfect sunset spot. The diary feature here is cool for remembering the trip.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-11T06:56:11.026Z"
+    },
+    {
+      "id": "c35ab13a-236e-4ce6-8278-a8c59642f20f",
+      "placeId": "html-ban-1",
+      "userId": "seed-u-1-0",
+      "userName": "Ananya K.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Worth the hype. We spent longer than planned and still did not see everything.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-10T20:56:11.026Z"
+    },
+    {
+      "id": "cb5f1240-57fc-4067-b544-52d620f5e558",
+      "placeId": "html-ban-1",
+      "userId": "seed-u-1-1",
+      "userName": "Vikram T.",
+      "rating": 4,
+      "title": "",
+      "text": "Good value for money. Would book a table again during peak hours.",
+      "photoUrl": "https://images.unsplash.com/photo-1476514525535-07fb3ef4e5c1?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-10T18:56:11.026Z"
+    },
+    {
+      "id": "42d7528f-7398-4c67-bb02-e1663dfba24c",
+      "placeId": "html-ban-11",
+      "userId": "seed-u-2-0",
+      "userName": "Sneha P.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Family-friendly and easy to reach by metro. Carry water if you go in summer.",
+      "photoUrl": "https://images.unsplash.com/photo-1476514525535-07fb3ef4e5c1?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-10T08:56:11.026Z"
+    },
+    {
+      "id": "f04f084f-0a04-4702-aaa6-e75aff7498e4",
+      "placeId": "html-ban-11",
+      "userId": "seed-u-2-1",
+      "userName": "Arjun D.",
+      "rating": 4,
+      "title": "",
+      "text": "Historic vibe is strong — read a bit before you go, it makes the visit richer.",
+      "photoUrl": "https://images.unsplash.com/photo-1526772662000-3f88f104f11d?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-10T06:56:11.026Z"
+    },
+    {
+      "id": "c66e65b8-c7b4-4579-9928-d44790e60fbe",
+      "placeId": "html-ban-21",
+      "userId": "seed-u-3-0",
+      "userName": "Meera L.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Perfect sunset spot. The diary feature here is cool for remembering the trip.",
+      "photoUrl": "https://images.unsplash.com/photo-1526772662000-3f88f104f11d?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-09T20:56:11.026Z"
+    },
+    {
+      "id": "6a9b75dc-0092-4053-8ba4-2d488f755d67",
+      "placeId": "html-ban-21",
+      "userId": "seed-u-3-1",
+      "userName": "Kabir N.",
+      "rating": 4,
+      "title": "",
+      "text": "Loved the local food stalls nearby. Combine this with an evening walk.",
+      "photoUrl": null,
+      "createdAt": "2026-04-09T18:56:11.026Z"
+    },
+    {
+      "id": "efcf1c64-1c2e-40da-adc4-a6325d0bd9e6",
+      "placeId": "html-ban-31",
+      "userId": "seed-u-4-0",
+      "userName": "Ishita R.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Good value for money. Would book a table again during peak hours.",
+      "photoUrl": null,
+      "createdAt": "2026-04-09T08:56:11.026Z"
+    },
+    {
+      "id": "9d92264b-33d9-4858-91af-a42aaa8b00aa",
+      "placeId": "html-ban-31",
+      "userId": "seed-u-4-1",
+      "userName": "Dev A.",
+      "rating": 4,
+      "title": "",
+      "text": "A bit touristy but still enjoyable. Go early morning for the best light.",
+      "photoUrl": null,
+      "createdAt": "2026-04-09T06:56:11.026Z"
+    },
+    {
+      "id": "f984830a-f37b-4de7-8ae9-5431b2af9ab5",
+      "placeId": "html-ban-41",
+      "userId": "seed-u-5-0",
+      "userName": "Priya S.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Historic vibe is strong — read a bit before you go, it makes the visit richer.",
+      "photoUrl": null,
+      "createdAt": "2026-04-08T20:56:11.026Z"
+    },
+    {
+      "id": "b0348db3-859d-4d82-a698-a926dede8288",
+      "placeId": "html-ban-41",
+      "userId": "seed-u-5-1",
+      "userName": "Rahul M.",
+      "rating": 4,
+      "title": "",
+      "text": "We used WayEase to plan the day around this — worked out really well.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-08T18:56:11.027Z"
+    },
+    {
+      "id": "654e44b9-dddd-4742-a506-b05c2ad5bd8b",
+      "placeId": "html-ban-51",
+      "userId": "seed-u-6-0",
+      "userName": "Ananya K.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Loved the local food stalls nearby. Combine this with an evening walk.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-08T08:56:11.027Z"
+    },
+    {
+      "id": "78a22ee9-cd94-4783-b917-4c480d953748",
+      "placeId": "html-ban-51",
+      "userId": "seed-u-6-1",
+      "userName": "Vikram T.",
+      "rating": 4,
+      "title": "",
+      "text": "Clean, well maintained, and signage is clear. Recommended for first-timers.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-08T06:56:11.027Z"
+    },
+    {
+      "id": "e8e22e34-1eb7-4285-835b-157951227f9a",
+      "placeId": "html-ban-61",
+      "userId": "seed-u-7-0",
+      "userName": "Sneha P.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "A bit touristy but still enjoyable. Go early morning for the best light.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-07T20:56:11.027Z"
+    },
+    {
+      "id": "3b950501-05af-4d29-938d-91d792fbd7c4",
+      "placeId": "html-ban-61",
+      "userId": "seed-u-7-1",
+      "userName": "Arjun D.",
+      "rating": 4,
+      "title": "",
+      "text": "Visited on a weekday — barely any crowd. Great for photos and the staff was helpful.",
+      "photoUrl": "https://images.unsplash.com/photo-1476514525535-07fb3ef4e5c1?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-07T18:56:11.027Z"
+    },
+    {
+      "id": "151d4cc5-f6b4-4cac-94f8-87a799ae1356",
+      "placeId": "html-ban-71",
+      "userId": "seed-u-8-0",
+      "userName": "Meera L.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "We used WayEase to plan the day around this — worked out really well.",
+      "photoUrl": "https://images.unsplash.com/photo-1476514525535-07fb3ef4e5c1?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-07T08:56:11.027Z"
+    },
+    {
+      "id": "d5aeb60a-aa53-4370-a7c4-60387f544411",
+      "placeId": "html-ban-71",
+      "userId": "seed-u-8-1",
+      "userName": "Kabir N.",
+      "rating": 4,
+      "title": "",
+      "text": "Worth the hype. We spent longer than planned and still did not see everything.",
+      "photoUrl": "https://images.unsplash.com/photo-1526772662000-3f88f104f11d?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-07T06:56:11.027Z"
+    },
+    {
+      "id": "39f1c2c5-472f-41a8-9e3d-9febbb7844ad",
+      "placeId": "html-ban-81",
+      "userId": "seed-u-9-0",
+      "userName": "Ishita R.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Clean, well maintained, and signage is clear. Recommended for first-timers.",
+      "photoUrl": "https://images.unsplash.com/photo-1526772662000-3f88f104f11d?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-06T20:56:11.027Z"
+    },
+    {
+      "id": "e73b9a93-1945-4d93-a9f4-6fb7851d6573",
+      "placeId": "html-ban-81",
+      "userId": "seed-u-9-1",
+      "userName": "Dev A.",
+      "rating": 4,
+      "title": "",
+      "text": "Family-friendly and easy to reach by metro. Carry water if you go in summer.",
+      "photoUrl": null,
+      "createdAt": "2026-04-06T18:56:11.027Z"
+    },
+    {
+      "id": "c904e4e9-7a6d-4dfe-bd10-6d21a5b96e80",
+      "placeId": "html-ban-91",
+      "userId": "seed-u-10-0",
+      "userName": "Priya S.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Visited on a weekday — barely any crowd. Great for photos and the staff was helpful.",
+      "photoUrl": null,
+      "createdAt": "2026-04-06T08:56:11.027Z"
+    },
+    {
+      "id": "87eb7804-9d11-45bc-84f9-380c8a52da21",
+      "placeId": "html-ban-91",
+      "userId": "seed-u-10-1",
+      "userName": "Rahul M.",
+      "rating": 4,
+      "title": "",
+      "text": "Perfect sunset spot. The diary feature here is cool for remembering the trip.",
+      "photoUrl": null,
+      "createdAt": "2026-04-06T06:56:11.027Z"
+    },
+    {
+      "id": "52edf3fa-bc7d-4bcf-844a-d20301f0daf0",
+      "placeId": "html-ban-101",
+      "userId": "seed-u-11-0",
+      "userName": "Ananya K.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Worth the hype. We spent longer than planned and still did not see everything.",
+      "photoUrl": null,
+      "createdAt": "2026-04-05T20:56:11.027Z"
+    },
+    {
+      "id": "86a0b44e-66d2-426a-af33-96c7d8b3efae",
+      "placeId": "html-ban-101",
+      "userId": "seed-u-11-1",
+      "userName": "Vikram T.",
+      "rating": 4,
+      "title": "",
+      "text": "Good value for money. Would book a table again during peak hours.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-05T18:56:11.027Z"
+    },
+    {
+      "id": "c671c4d6-de91-462b-b57d-a8184ae2f422",
+      "placeId": "html-del-111",
+      "userId": "seed-u-12-0",
+      "userName": "Sneha P.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Family-friendly and easy to reach by metro. Carry water if you go in summer.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-05T08:56:11.027Z"
+    },
+    {
+      "id": "5e098c98-f2b1-4719-9186-7148fb2cbe8f",
+      "placeId": "html-del-111",
+      "userId": "seed-u-12-1",
+      "userName": "Arjun D.",
+      "rating": 4,
+      "title": "",
+      "text": "Historic vibe is strong — read a bit before you go, it makes the visit richer.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-05T06:56:11.027Z"
+    },
+    {
+      "id": "04c9cc60-1fad-4e7b-8c9b-38168fbc27c9",
+      "placeId": "html-del-121",
+      "userId": "seed-u-13-0",
+      "userName": "Meera L.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Perfect sunset spot. The diary feature here is cool for remembering the trip.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-04T20:56:11.027Z"
+    },
+    {
+      "id": "ab4b828f-39fa-4b0c-8899-207a8098bddc",
+      "placeId": "html-del-121",
+      "userId": "seed-u-13-1",
+      "userName": "Kabir N.",
+      "rating": 4,
+      "title": "",
+      "text": "Loved the local food stalls nearby. Combine this with an evening walk.",
+      "photoUrl": "https://images.unsplash.com/photo-1476514525535-07fb3ef4e5c1?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-04T18:56:11.027Z"
+    },
+    {
+      "id": "b36642f7-d96c-4f23-b076-43a3b8b67037",
+      "placeId": "html-del-131",
+      "userId": "seed-u-14-0",
+      "userName": "Ishita R.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Good value for money. Would book a table again during peak hours.",
+      "photoUrl": "https://images.unsplash.com/photo-1476514525535-07fb3ef4e5c1?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-04T08:56:11.027Z"
+    },
+    {
+      "id": "d5951447-d41a-48fb-992b-099a9d6740b8",
+      "placeId": "html-del-131",
+      "userId": "seed-u-14-1",
+      "userName": "Dev A.",
+      "rating": 4,
+      "title": "",
+      "text": "A bit touristy but still enjoyable. Go early morning for the best light.",
+      "photoUrl": "https://images.unsplash.com/photo-1526772662000-3f88f104f11d?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-04T06:56:11.027Z"
+    },
+    {
+      "id": "30210892-490d-45bb-bc2b-0c6f69dc6371",
+      "placeId": "html-del-141",
+      "userId": "seed-u-15-0",
+      "userName": "Priya S.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Historic vibe is strong — read a bit before you go, it makes the visit richer.",
+      "photoUrl": "https://images.unsplash.com/photo-1526772662000-3f88f104f11d?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-03T20:56:11.027Z"
+    },
+    {
+      "id": "65951c70-5430-4399-9e7d-69fccb85af6d",
+      "placeId": "html-del-141",
+      "userId": "seed-u-15-1",
+      "userName": "Rahul M.",
+      "rating": 4,
+      "title": "",
+      "text": "We used WayEase to plan the day around this — worked out really well.",
+      "photoUrl": null,
+      "createdAt": "2026-04-03T18:56:11.027Z"
+    },
+    {
+      "id": "a12eec47-5c2d-4c32-ab7c-1f855473a313",
+      "placeId": "html-del-151",
+      "userId": "seed-u-16-0",
+      "userName": "Ananya K.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Loved the local food stalls nearby. Combine this with an evening walk.",
+      "photoUrl": null,
+      "createdAt": "2026-04-03T08:56:11.027Z"
+    },
+    {
+      "id": "b4f47eca-caf1-4127-b917-723298fcaa0f",
+      "placeId": "html-del-151",
+      "userId": "seed-u-16-1",
+      "userName": "Vikram T.",
+      "rating": 4,
+      "title": "",
+      "text": "Clean, well maintained, and signage is clear. Recommended for first-timers.",
+      "photoUrl": null,
+      "createdAt": "2026-04-03T06:56:11.027Z"
+    },
+    {
+      "id": "7ea8851c-3084-459e-8091-f7dfe083d4da",
+      "placeId": "html-del-161",
+      "userId": "seed-u-17-0",
+      "userName": "Sneha P.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "A bit touristy but still enjoyable. Go early morning for the best light.",
+      "photoUrl": null,
+      "createdAt": "2026-04-02T20:56:11.027Z"
+    },
+    {
+      "id": "df8056fb-3f54-4ee8-b2cd-c9c4623afa01",
+      "placeId": "html-del-161",
+      "userId": "seed-u-17-1",
+      "userName": "Arjun D.",
+      "rating": 4,
+      "title": "",
+      "text": "Visited on a weekday — barely any crowd. Great for photos and the staff was helpful.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-02T18:56:11.027Z"
+    },
+    {
+      "id": "24c18e7d-6bf3-4e0d-b990-cd03fee19d48",
+      "placeId": "html-del-171",
+      "userId": "seed-u-18-0",
+      "userName": "Meera L.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "We used WayEase to plan the day around this — worked out really well.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-02T08:56:11.027Z"
+    },
+    {
+      "id": "26da12e4-6d57-43ee-b8f7-6609dc7d0918",
+      "placeId": "html-del-171",
+      "userId": "seed-u-18-1",
+      "userName": "Kabir N.",
+      "rating": 4,
+      "title": "",
+      "text": "Worth the hype. We spent longer than planned and still did not see everything.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-02T06:56:11.027Z"
+    },
+    {
+      "id": "bef89532-02a6-48a2-8828-b278cfef1da1",
+      "placeId": "html-del-181",
+      "userId": "seed-u-19-0",
+      "userName": "Ishita R.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Clean, well maintained, and signage is clear. Recommended for first-timers.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-01T20:56:11.027Z"
+    },
+    {
+      "id": "73c1e137-4312-4f90-a055-dae1e46e061f",
+      "placeId": "html-del-181",
+      "userId": "seed-u-19-1",
+      "userName": "Dev A.",
+      "rating": 4,
+      "title": "",
+      "text": "Family-friendly and easy to reach by metro. Carry water if you go in summer.",
+      "photoUrl": "https://images.unsplash.com/photo-1476514525535-07fb3ef4e5c1?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-01T18:56:11.027Z"
+    },
+    {
+      "id": "495d9e5b-48c4-4714-9597-89d0afd4572d",
+      "placeId": "html-del-191",
+      "userId": "seed-u-20-0",
+      "userName": "Priya S.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Visited on a weekday — barely any crowd. Great for photos and the staff was helpful.",
+      "photoUrl": "https://images.unsplash.com/photo-1476514525535-07fb3ef4e5c1?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-01T08:56:11.027Z"
+    },
+    {
+      "id": "8ccb3f3e-a2b1-4972-a279-ed7456cee40e",
+      "placeId": "html-del-191",
+      "userId": "seed-u-20-1",
+      "userName": "Rahul M.",
+      "rating": 4,
+      "title": "",
+      "text": "Perfect sunset spot. The diary feature here is cool for remembering the trip.",
+      "photoUrl": "https://images.unsplash.com/photo-1526772662000-3f88f104f11d?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-04-01T06:56:11.027Z"
+    },
+    {
+      "id": "f48d9574-52c7-4444-b783-7c0433d650ab",
+      "placeId": "html-del-201",
+      "userId": "seed-u-21-0",
+      "userName": "Ananya K.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Worth the hype. We spent longer than planned and still did not see everything.",
+      "photoUrl": "https://images.unsplash.com/photo-1526772662000-3f88f104f11d?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-31T20:56:11.027Z"
+    },
+    {
+      "id": "fa264ce3-3380-4591-9e10-70fded6d97cb",
+      "placeId": "html-del-201",
+      "userId": "seed-u-21-1",
+      "userName": "Vikram T.",
+      "rating": 4,
+      "title": "",
+      "text": "Good value for money. Would book a table again during peak hours.",
+      "photoUrl": null,
+      "createdAt": "2026-03-31T18:56:11.027Z"
+    },
+    {
+      "id": "2979110c-33d3-439c-832c-8b6d72eaec8e",
+      "placeId": "html-del-211",
+      "userId": "seed-u-22-0",
+      "userName": "Sneha P.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Family-friendly and easy to reach by metro. Carry water if you go in summer.",
+      "photoUrl": null,
+      "createdAt": "2026-03-31T08:56:11.027Z"
+    },
+    {
+      "id": "8e01ba52-268e-4a63-9271-c494f2fe7eef",
+      "placeId": "html-del-211",
+      "userId": "seed-u-22-1",
+      "userName": "Arjun D.",
+      "rating": 4,
+      "title": "",
+      "text": "Historic vibe is strong — read a bit before you go, it makes the visit richer.",
+      "photoUrl": null,
+      "createdAt": "2026-03-31T06:56:11.027Z"
+    },
+    {
+      "id": "1768a8db-2d24-436b-900e-96c06bb89106",
+      "placeId": "html-del-221",
+      "userId": "seed-u-23-0",
+      "userName": "Meera L.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Perfect sunset spot. The diary feature here is cool for remembering the trip.",
+      "photoUrl": null,
+      "createdAt": "2026-03-30T20:56:11.027Z"
+    },
+    {
+      "id": "8787de89-8f24-4e07-ab7f-bbf0132c7efe",
+      "placeId": "html-del-221",
+      "userId": "seed-u-23-1",
+      "userName": "Kabir N.",
+      "rating": 4,
+      "title": "",
+      "text": "Loved the local food stalls nearby. Combine this with an evening walk.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-30T18:56:11.027Z"
+    },
+    {
+      "id": "f1c08ee2-ecc9-4176-9bd7-44693345be04",
+      "placeId": "html-del-231",
+      "userId": "seed-u-24-0",
+      "userName": "Ishita R.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Good value for money. Would book a table again during peak hours.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-30T08:56:11.027Z"
+    },
+    {
+      "id": "8be688a9-5820-47d4-9b9d-3a4f1d9d9fcb",
+      "placeId": "html-del-231",
+      "userId": "seed-u-24-1",
+      "userName": "Dev A.",
+      "rating": 4,
+      "title": "",
+      "text": "A bit touristy but still enjoyable. Go early morning for the best light.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-30T06:56:11.027Z"
+    },
+    {
+      "id": "0f5d1edd-4fb2-402e-a317-37999a758217",
+      "placeId": "html-del-241",
+      "userId": "seed-u-25-0",
+      "userName": "Priya S.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Historic vibe is strong — read a bit before you go, it makes the visit richer.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-29T20:56:11.027Z"
+    },
+    {
+      "id": "223ca6bb-2e10-42e4-a11f-8c69b07bf6ce",
+      "placeId": "html-del-241",
+      "userId": "seed-u-25-1",
+      "userName": "Rahul M.",
+      "rating": 4,
+      "title": "",
+      "text": "We used WayEase to plan the day around this — worked out really well.",
+      "photoUrl": "https://images.unsplash.com/photo-1476514525535-07fb3ef4e5c1?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-29T18:56:11.027Z"
+    },
+    {
+      "id": "cb05dde6-df3e-45ea-a29c-f90ee23f93ca",
+      "placeId": "html-del-251",
+      "userId": "seed-u-26-0",
+      "userName": "Ananya K.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Loved the local food stalls nearby. Combine this with an evening walk.",
+      "photoUrl": "https://images.unsplash.com/photo-1476514525535-07fb3ef4e5c1?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-29T08:56:11.027Z"
+    },
+    {
+      "id": "ebe5ac4c-0512-49dc-bb54-42ba8d82b160",
+      "placeId": "html-del-251",
+      "userId": "seed-u-26-1",
+      "userName": "Vikram T.",
+      "rating": 4,
+      "title": "",
+      "text": "Clean, well maintained, and signage is clear. Recommended for first-timers.",
+      "photoUrl": "https://images.unsplash.com/photo-1526772662000-3f88f104f11d?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-29T06:56:11.027Z"
+    },
+    {
+      "id": "d0a87085-cfcb-4c13-8f3f-db000fc42e0e",
+      "placeId": "html-del-261",
+      "userId": "seed-u-27-0",
+      "userName": "Sneha P.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "A bit touristy but still enjoyable. Go early morning for the best light.",
+      "photoUrl": "https://images.unsplash.com/photo-1526772662000-3f88f104f11d?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-28T20:56:11.027Z"
+    },
+    {
+      "id": "8d5dad9d-aa85-4a86-8787-50b48295dab5",
+      "placeId": "html-del-261",
+      "userId": "seed-u-27-1",
+      "userName": "Arjun D.",
+      "rating": 4,
+      "title": "",
+      "text": "Visited on a weekday — barely any crowd. Great for photos and the staff was helpful.",
+      "photoUrl": null,
+      "createdAt": "2026-03-28T18:56:11.027Z"
+    },
+    {
+      "id": "fd7dfc6d-cbb0-4903-896d-6c44e5fd4ee7",
+      "placeId": "html-del-271",
+      "userId": "seed-u-28-0",
+      "userName": "Meera L.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "We used WayEase to plan the day around this — worked out really well.",
+      "photoUrl": null,
+      "createdAt": "2026-03-28T08:56:11.027Z"
+    },
+    {
+      "id": "a0a02a8e-fd4c-4023-b9b7-6ed75a4365b8",
+      "placeId": "html-del-271",
+      "userId": "seed-u-28-1",
+      "userName": "Kabir N.",
+      "rating": 4,
+      "title": "",
+      "text": "Worth the hype. We spent longer than planned and still did not see everything.",
+      "photoUrl": null,
+      "createdAt": "2026-03-28T06:56:11.027Z"
+    },
+    {
+      "id": "885222e6-353b-45bd-8b5d-645297774719",
+      "placeId": "html-del-281",
+      "userId": "seed-u-29-0",
+      "userName": "Ishita R.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Clean, well maintained, and signage is clear. Recommended for first-timers.",
+      "photoUrl": null,
+      "createdAt": "2026-03-27T20:56:11.027Z"
+    },
+    {
+      "id": "8fe11d2d-b36e-4678-8f04-f41477a635e6",
+      "placeId": "html-del-281",
+      "userId": "seed-u-29-1",
+      "userName": "Dev A.",
+      "rating": 4,
+      "title": "",
+      "text": "Family-friendly and easy to reach by metro. Carry water if you go in summer.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-27T18:56:11.027Z"
+    },
+    {
+      "id": "0e0407fe-fa7c-4637-b575-f61c19a4288e",
+      "placeId": "html-del-291",
+      "userId": "seed-u-30-0",
+      "userName": "Priya S.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Visited on a weekday — barely any crowd. Great for photos and the staff was helpful.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-27T08:56:11.027Z"
+    },
+    {
+      "id": "4debc603-f172-4df8-b63c-baebe9f33f75",
+      "placeId": "html-del-291",
+      "userId": "seed-u-30-1",
+      "userName": "Rahul M.",
+      "rating": 4,
+      "title": "",
+      "text": "Perfect sunset spot. The diary feature here is cool for remembering the trip.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-27T06:56:11.027Z"
+    },
+    {
+      "id": "916f38bc-20a6-49fb-a738-89b1c20bd4aa",
+      "placeId": "html-del-301",
+      "userId": "seed-u-31-0",
+      "userName": "Ananya K.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Worth the hype. We spent longer than planned and still did not see everything.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-26T20:56:11.027Z"
+    },
+    {
+      "id": "c7edba50-7115-4788-87e8-b097ffdb55ec",
+      "placeId": "html-del-301",
+      "userId": "seed-u-31-1",
+      "userName": "Vikram T.",
+      "rating": 4,
+      "title": "",
+      "text": "Good value for money. Would book a table again during peak hours.",
+      "photoUrl": "https://images.unsplash.com/photo-1476514525535-07fb3ef4e5c1?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-26T18:56:11.027Z"
+    },
+    {
+      "id": "2fc28899-c730-4fbb-9bb0-c30811346792",
+      "placeId": "html-del-311",
+      "userId": "seed-u-32-0",
+      "userName": "Sneha P.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Family-friendly and easy to reach by metro. Carry water if you go in summer.",
+      "photoUrl": "https://images.unsplash.com/photo-1476514525535-07fb3ef4e5c1?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-26T08:56:11.027Z"
+    },
+    {
+      "id": "8942a7e8-e95c-4ce9-8e13-7d2bdd9a79f4",
+      "placeId": "html-del-311",
+      "userId": "seed-u-32-1",
+      "userName": "Arjun D.",
+      "rating": 4,
+      "title": "",
+      "text": "Historic vibe is strong — read a bit before you go, it makes the visit richer.",
+      "photoUrl": "https://images.unsplash.com/photo-1526772662000-3f88f104f11d?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-26T06:56:11.027Z"
+    },
+    {
+      "id": "0b409450-b260-43bf-bda3-13609f048e76",
+      "placeId": "html-del-321",
+      "userId": "seed-u-33-0",
+      "userName": "Meera L.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Perfect sunset spot. The diary feature here is cool for remembering the trip.",
+      "photoUrl": "https://images.unsplash.com/photo-1526772662000-3f88f104f11d?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-25T20:56:11.027Z"
+    },
+    {
+      "id": "32d964a7-c0ce-49f3-8a1e-094ddf69438e",
+      "placeId": "html-del-321",
+      "userId": "seed-u-33-1",
+      "userName": "Kabir N.",
+      "rating": 4,
+      "title": "",
+      "text": "Loved the local food stalls nearby. Combine this with an evening walk.",
+      "photoUrl": null,
+      "createdAt": "2026-03-25T18:56:11.027Z"
+    },
+    {
+      "id": "fe4a48e3-54d6-4f3e-ba03-776a4bfe36d3",
+      "placeId": "html-del-331",
+      "userId": "seed-u-34-0",
+      "userName": "Ishita R.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Good value for money. Would book a table again during peak hours.",
+      "photoUrl": null,
+      "createdAt": "2026-03-25T08:56:11.027Z"
+    },
+    {
+      "id": "055fdaca-d714-41dd-bcc9-fd750d783afd",
+      "placeId": "html-del-331",
+      "userId": "seed-u-34-1",
+      "userName": "Dev A.",
+      "rating": 4,
+      "title": "",
+      "text": "A bit touristy but still enjoyable. Go early morning for the best light.",
+      "photoUrl": null,
+      "createdAt": "2026-03-25T06:56:11.027Z"
+    },
+    {
+      "id": "77052a17-871e-492b-a4af-c94fba473390",
+      "placeId": "html-del-341",
+      "userId": "seed-u-35-0",
+      "userName": "Priya S.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Historic vibe is strong — read a bit before you go, it makes the visit richer.",
+      "photoUrl": null,
+      "createdAt": "2026-03-24T20:56:11.027Z"
+    },
+    {
+      "id": "add1e687-e7e8-4b51-8e0f-b44cf30a7def",
+      "placeId": "html-del-341",
+      "userId": "seed-u-35-1",
+      "userName": "Rahul M.",
+      "rating": 4,
+      "title": "",
+      "text": "We used WayEase to plan the day around this — worked out really well.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-24T18:56:11.027Z"
+    },
+    {
+      "id": "a10722e4-9aab-4b92-8e13-79b9f896ede3",
+      "placeId": "html-del-351",
+      "userId": "seed-u-36-0",
+      "userName": "Ananya K.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Loved the local food stalls nearby. Combine this with an evening walk.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-24T08:56:11.027Z"
+    },
+    {
+      "id": "b29b1fcf-80ba-46d0-8926-7f7db62c51d4",
+      "placeId": "html-del-351",
+      "userId": "seed-u-36-1",
+      "userName": "Vikram T.",
+      "rating": 4,
+      "title": "",
+      "text": "Clean, well maintained, and signage is clear. Recommended for first-timers.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-24T06:56:11.027Z"
+    },
+    {
+      "id": "ddaad9f3-d179-42dd-98c3-488b5db4d477",
+      "placeId": "html-del-361",
+      "userId": "seed-u-37-0",
+      "userName": "Sneha P.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "A bit touristy but still enjoyable. Go early morning for the best light.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-23T20:56:11.027Z"
+    },
+    {
+      "id": "0c1d0ccd-aa67-4c15-9a66-966b3cd386f4",
+      "placeId": "html-del-361",
+      "userId": "seed-u-37-1",
+      "userName": "Arjun D.",
+      "rating": 4,
+      "title": "",
+      "text": "Visited on a weekday — barely any crowd. Great for photos and the staff was helpful.",
+      "photoUrl": "https://images.unsplash.com/photo-1476514525535-07fb3ef4e5c1?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-23T18:56:11.027Z"
+    },
+    {
+      "id": "512cdd76-0238-462b-b764-9db7242d0a4f",
+      "placeId": "html-del-371",
+      "userId": "seed-u-38-0",
+      "userName": "Meera L.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "We used WayEase to plan the day around this — worked out really well.",
+      "photoUrl": "https://images.unsplash.com/photo-1476514525535-07fb3ef4e5c1?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-23T08:56:11.027Z"
+    },
+    {
+      "id": "a4ed7b17-7cf6-4791-a68e-765303b96c0d",
+      "placeId": "html-del-371",
+      "userId": "seed-u-38-1",
+      "userName": "Kabir N.",
+      "rating": 4,
+      "title": "",
+      "text": "Worth the hype. We spent longer than planned and still did not see everything.",
+      "photoUrl": "https://images.unsplash.com/photo-1526772662000-3f88f104f11d?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-23T06:56:11.027Z"
+    },
+    {
+      "id": "642d4ecc-df14-4458-b8f6-9d110e92ff02",
+      "placeId": "html-del-381",
+      "userId": "seed-u-39-0",
+      "userName": "Ishita R.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Clean, well maintained, and signage is clear. Recommended for first-timers.",
+      "photoUrl": "https://images.unsplash.com/photo-1526772662000-3f88f104f11d?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-22T20:56:11.027Z"
+    },
+    {
+      "id": "2f17f62d-7f68-443e-94ae-69e4b9395e53",
+      "placeId": "html-del-381",
+      "userId": "seed-u-39-1",
+      "userName": "Dev A.",
+      "rating": 4,
+      "title": "",
+      "text": "Family-friendly and easy to reach by metro. Carry water if you go in summer.",
+      "photoUrl": null,
+      "createdAt": "2026-03-22T18:56:11.027Z"
+    },
+    {
+      "id": "0d01853d-1047-4b8c-b04e-939234aa59c3",
+      "placeId": "html-del-391",
+      "userId": "seed-u-40-0",
+      "userName": "Priya S.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Visited on a weekday — barely any crowd. Great for photos and the staff was helpful.",
+      "photoUrl": null,
+      "createdAt": "2026-03-22T08:56:11.027Z"
+    },
+    {
+      "id": "00dc2ff1-1103-405c-8cd0-feebec08bc13",
+      "placeId": "html-del-391",
+      "userId": "seed-u-40-1",
+      "userName": "Rahul M.",
+      "rating": 4,
+      "title": "",
+      "text": "Perfect sunset spot. The diary feature here is cool for remembering the trip.",
+      "photoUrl": null,
+      "createdAt": "2026-03-22T06:56:11.027Z"
+    },
+    {
+      "id": "fbb5c6d0-3041-4df9-b015-e7b9e82fbc30",
+      "placeId": "html-del-401",
+      "userId": "seed-u-41-0",
+      "userName": "Ananya K.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Worth the hype. We spent longer than planned and still did not see everything.",
+      "photoUrl": null,
+      "createdAt": "2026-03-21T20:56:11.027Z"
+    },
+    {
+      "id": "3a9832a3-fd7e-4339-920f-4fbdc3337e11",
+      "placeId": "html-del-401",
+      "userId": "seed-u-41-1",
+      "userName": "Vikram T.",
+      "rating": 4,
+      "title": "",
+      "text": "Good value for money. Would book a table again during peak hours.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-21T18:56:11.027Z"
+    },
+    {
+      "id": "b67660c4-978e-4e70-8d10-b4f4ed5a2749",
+      "placeId": "html-del-411",
+      "userId": "seed-u-42-0",
+      "userName": "Sneha P.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Family-friendly and easy to reach by metro. Carry water if you go in summer.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-21T08:56:11.027Z"
+    },
+    {
+      "id": "ad36a79c-b84f-4cc2-8c9d-dc7722397742",
+      "placeId": "html-del-411",
+      "userId": "seed-u-42-1",
+      "userName": "Arjun D.",
+      "rating": 4,
+      "title": "",
+      "text": "Historic vibe is strong — read a bit before you go, it makes the visit richer.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-21T06:56:11.027Z"
+    },
+    {
+      "id": "2f6227e3-5c33-4b8d-b7b5-bf487bdbbc21",
+      "placeId": "html-del-421",
+      "userId": "seed-u-43-0",
+      "userName": "Meera L.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Perfect sunset spot. The diary feature here is cool for remembering the trip.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-20T20:56:11.027Z"
+    },
+    {
+      "id": "664d8df1-9545-42fa-a93a-7a70239eec2e",
+      "placeId": "html-del-421",
+      "userId": "seed-u-43-1",
+      "userName": "Kabir N.",
+      "rating": 4,
+      "title": "",
+      "text": "Loved the local food stalls nearby. Combine this with an evening walk.",
+      "photoUrl": "https://images.unsplash.com/photo-1476514525535-07fb3ef4e5c1?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-20T18:56:11.027Z"
+    },
+    {
+      "id": "1bf9420f-4189-4616-b08f-f37bb69e06a6",
+      "placeId": "html-del-431",
+      "userId": "seed-u-44-0",
+      "userName": "Ishita R.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Good value for money. Would book a table again during peak hours.",
+      "photoUrl": "https://images.unsplash.com/photo-1476514525535-07fb3ef4e5c1?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-20T08:56:11.027Z"
+    },
+    {
+      "id": "5fa6712f-6827-4573-aa6a-92c1775df246",
+      "placeId": "html-del-431",
+      "userId": "seed-u-44-1",
+      "userName": "Dev A.",
+      "rating": 4,
+      "title": "",
+      "text": "A bit touristy but still enjoyable. Go early morning for the best light.",
+      "photoUrl": "https://images.unsplash.com/photo-1526772662000-3f88f104f11d?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-20T06:56:11.027Z"
+    },
+    {
+      "id": "9f655665-1802-44a0-bf8e-b24bbdcce711",
+      "placeId": "html-del-441",
+      "userId": "seed-u-45-0",
+      "userName": "Priya S.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Historic vibe is strong — read a bit before you go, it makes the visit richer.",
+      "photoUrl": "https://images.unsplash.com/photo-1526772662000-3f88f104f11d?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-19T20:56:11.027Z"
+    },
+    {
+      "id": "93c01954-4de1-496e-8c19-6153316d2818",
+      "placeId": "html-del-441",
+      "userId": "seed-u-45-1",
+      "userName": "Rahul M.",
+      "rating": 4,
+      "title": "",
+      "text": "We used WayEase to plan the day around this — worked out really well.",
+      "photoUrl": null,
+      "createdAt": "2026-03-19T18:56:11.027Z"
+    },
+    {
+      "id": "e0650d71-acd7-4bff-ad52-97b11ee9af70",
+      "placeId": "html-del-451",
+      "userId": "seed-u-46-0",
+      "userName": "Ananya K.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Loved the local food stalls nearby. Combine this with an evening walk.",
+      "photoUrl": null,
+      "createdAt": "2026-03-19T08:56:11.027Z"
+    },
+    {
+      "id": "07bfbb00-d191-4c34-82af-034f047ad22c",
+      "placeId": "html-del-451",
+      "userId": "seed-u-46-1",
+      "userName": "Vikram T.",
+      "rating": 4,
+      "title": "",
+      "text": "Clean, well maintained, and signage is clear. Recommended for first-timers.",
+      "photoUrl": null,
+      "createdAt": "2026-03-19T06:56:11.027Z"
+    },
+    {
+      "id": "99dc9544-bdc0-4c22-bef5-d5d6cbcd6e7c",
+      "placeId": "html-mum-461",
+      "userId": "seed-u-47-0",
+      "userName": "Sneha P.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "A bit touristy but still enjoyable. Go early morning for the best light.",
+      "photoUrl": null,
+      "createdAt": "2026-03-18T20:56:11.027Z"
+    },
+    {
+      "id": "b551bb70-f7da-4754-8da3-34b9b2e4b361",
+      "placeId": "html-mum-461",
+      "userId": "seed-u-47-1",
+      "userName": "Arjun D.",
+      "rating": 4,
+      "title": "",
+      "text": "Visited on a weekday — barely any crowd. Great for photos and the staff was helpful.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-18T18:56:11.027Z"
+    },
+    {
+      "id": "184b257b-138a-409a-81d3-1aaea0f8c1ea",
+      "placeId": "html-mum-471",
+      "userId": "seed-u-48-0",
+      "userName": "Meera L.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "We used WayEase to plan the day around this — worked out really well.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-18T08:56:11.027Z"
+    },
+    {
+      "id": "6d0a6f95-e47e-4175-94e4-3af0d6a10885",
+      "placeId": "html-mum-471",
+      "userId": "seed-u-48-1",
+      "userName": "Kabir N.",
+      "rating": 4,
+      "title": "",
+      "text": "Worth the hype. We spent longer than planned and still did not see everything.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-18T06:56:11.027Z"
+    },
+    {
+      "id": "cdc8f4ec-cb8b-4ee3-afef-1747948c35ab",
+      "placeId": "html-mum-481",
+      "userId": "seed-u-49-0",
+      "userName": "Ishita R.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Clean, well maintained, and signage is clear. Recommended for first-timers.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-17T20:56:11.027Z"
+    },
+    {
+      "id": "706b6bf7-067e-440f-b139-eea0511e52e3",
+      "placeId": "html-mum-481",
+      "userId": "seed-u-49-1",
+      "userName": "Dev A.",
+      "rating": 4,
+      "title": "",
+      "text": "Family-friendly and easy to reach by metro. Carry water if you go in summer.",
+      "photoUrl": "https://images.unsplash.com/photo-1476514525535-07fb3ef4e5c1?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-17T18:56:11.027Z"
+    },
+    {
+      "id": "bb5e7a46-a114-4fac-98cd-6ff2117582f6",
+      "placeId": "html-mum-491",
+      "userId": "seed-u-50-0",
+      "userName": "Priya S.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Visited on a weekday — barely any crowd. Great for photos and the staff was helpful.",
+      "photoUrl": "https://images.unsplash.com/photo-1476514525535-07fb3ef4e5c1?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-17T08:56:11.027Z"
+    },
+    {
+      "id": "d925a81e-29fe-43df-88d7-2e862a31b47f",
+      "placeId": "html-mum-491",
+      "userId": "seed-u-50-1",
+      "userName": "Rahul M.",
+      "rating": 4,
+      "title": "",
+      "text": "Perfect sunset spot. The diary feature here is cool for remembering the trip.",
+      "photoUrl": "https://images.unsplash.com/photo-1526772662000-3f88f104f11d?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-17T06:56:11.027Z"
+    },
+    {
+      "id": "b23c052c-d70f-406e-b267-50b1322f6a36",
+      "placeId": "html-mum-501",
+      "userId": "seed-u-51-0",
+      "userName": "Ananya K.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Worth the hype. We spent longer than planned and still did not see everything.",
+      "photoUrl": "https://images.unsplash.com/photo-1526772662000-3f88f104f11d?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-16T20:56:11.027Z"
+    },
+    {
+      "id": "0724447e-beb0-4f00-879d-7e4d07b4bde3",
+      "placeId": "html-mum-501",
+      "userId": "seed-u-51-1",
+      "userName": "Vikram T.",
+      "rating": 4,
+      "title": "",
+      "text": "Good value for money. Would book a table again during peak hours.",
+      "photoUrl": null,
+      "createdAt": "2026-03-16T18:56:11.027Z"
+    },
+    {
+      "id": "26d53a48-ee92-4bc9-a8a7-9093b697552c",
+      "placeId": "html-mum-511",
+      "userId": "seed-u-52-0",
+      "userName": "Sneha P.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Family-friendly and easy to reach by metro. Carry water if you go in summer.",
+      "photoUrl": null,
+      "createdAt": "2026-03-16T08:56:11.027Z"
+    },
+    {
+      "id": "5f7edd5d-a67a-42b9-b40f-81b8fe9daf59",
+      "placeId": "html-mum-511",
+      "userId": "seed-u-52-1",
+      "userName": "Arjun D.",
+      "rating": 4,
+      "title": "",
+      "text": "Historic vibe is strong — read a bit before you go, it makes the visit richer.",
+      "photoUrl": null,
+      "createdAt": "2026-03-16T06:56:11.027Z"
+    },
+    {
+      "id": "b526a462-c9d6-4f14-93c6-0a6a41baf7bb",
+      "placeId": "html-mum-521",
+      "userId": "seed-u-53-0",
+      "userName": "Meera L.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Perfect sunset spot. The diary feature here is cool for remembering the trip.",
+      "photoUrl": null,
+      "createdAt": "2026-03-15T20:56:11.027Z"
+    },
+    {
+      "id": "b9f4b63c-cb70-4e94-b34b-eb478772854a",
+      "placeId": "html-mum-521",
+      "userId": "seed-u-53-1",
+      "userName": "Kabir N.",
+      "rating": 4,
+      "title": "",
+      "text": "Loved the local food stalls nearby. Combine this with an evening walk.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-15T18:56:11.027Z"
+    },
+    {
+      "id": "ab5525e4-6e3f-4ff7-b6a3-1a1ebd676a5c",
+      "placeId": "html-mum-531",
+      "userId": "seed-u-54-0",
+      "userName": "Ishita R.",
+      "rating": 5,
+      "title": "Great experience",
+      "text": "Good value for money. Would book a table again during peak hours.",
+      "photoUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-15T08:56:11.027Z"
+    },
+    {
+      "id": "7c928556-5dec-45d8-be73-a3eb70c9e8f4",
+      "placeId": "html-mum-531",
+      "userId": "seed-u-54-1",
+      "userName": "Dev A.",
+      "rating": 4,
+      "title": "",
+      "text": "A bit touristy but still enjoyable. Go early morning for the best light.",
+      "photoUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop",
+      "createdAt": "2026-03-15T06:56:11.027Z"
+    },
+    {
+      "id": "e88caccf-82a5-4832-bca1-bf095ea84391",
+      "placeId": "hyd-1",
+      "userId": "960a32e4-af97-411b-8769-1c4a02fc1368",
+      "userName": "Traveler ···5025",
+      "rating": 5,
+      "title": "",
+      "text": "cvbn",
+      "photoUrl": null,
+      "createdAt": "2026-04-11T09:25:49.383Z"
+    },
+    {
+      "id": "530a7072-17e0-4f76-80a0-35e37b3b7aa2",
+      "placeId": "hyd-5",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "userName": "vaishnavi",
+      "rating": 5,
+      "title": "",
+      "text": "yummy food",
+      "photoUrl": null,
+      "createdAt": "2026-04-11T13:43:56.335Z"
+    }
+  ],
+  "reservations": [
+    {
+      "id": "539e3243-8dec-452b-98b6-5baf6e4ed399",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "placeId": "html-mum-550",
+      "placeName": "Shree Thaker Bhojanalay",
+      "city": "Mumbai",
+      "date": "2026-04-11",
+      "partySize": 2,
+      "note": "",
+      "status": "requested",
+      "createdAt": "2026-04-11T09:08:06.982Z"
+    },
+    {
+      "id": "010c7bfe-7bae-4871-9c82-ac19fcc804c3",
+      "userId": "11f5e1c2-6f92-46b3-8cf2-1aa76d2cda57",
+      "placeId": "html-mum-550",
+      "placeName": "Shree Thaker Bhojanalay",
+      "city": "Mumbai",
+      "date": "2026-04-11",
+      "partySize": 2,
+      "note": "",
+      "status": "requested",
+      "createdAt": "2026-04-11T09:08:08.081Z"
+    }
+  ]
+}

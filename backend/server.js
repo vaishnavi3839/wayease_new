@@ -1,57 +1,63 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-require('dotenv').config();
+const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
-app.use(cors()); // Enable CORS for all routes
-app.use(express.json()); // Parse JSON bodies
-app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
+// ================= SEED DATA =================
+try {
+  require('./seedData').run();
+} catch (e) {
+  console.warn('Seed skipped:', e.message);
+}
 
-// Routes
-const authRoutes = require('./routes/auth');
-const placesRoutes = require('./routes/places');
-const wishlistRoutes = require('./routes/wishlist');
+// ================= FILE SETUP =================
+const uploadsDir = path.join(__dirname, 'uploads');
+fs.mkdirSync(path.join(uploadsDir, 'reviews'), { recursive: true });
 
-// Mount API routes under /api to avoid collisions with frontend static files
-app.use('/api', authRoutes);
-app.use('/api', placesRoutes);
-app.use('/api', wishlistRoutes);
+// ================= MIDDLEWARE =================
+app.use(cors({
+  origin: process.env.FRONTEND_ORIGIN || '*',
+  credentials: true
+}));
 
-// Serve frontend static files
-app.use(express.static(path.join(__dirname, '..', 'wayease-frontend')));
+app.use(express.json({ limit: '2mb' }));
+app.use(express.urlencoded({ extended: true, limit: '2mb' }));
 
-// Health check endpoint
+app.use('/uploads', express.static(uploadsDir));
+
+// ================= FRONTEND =================
+app.use(express.static(path.join(__dirname, '../wayease-frontend')));
+
+// ================= ROUTES =================
+const authModule = require('./auth');
+
+app.use('/api', authModule.router);
+app.use('/api/wishlist', require('./wishlist'));
+app.use('/api/itinerary', require('./itinerary'));
+app.use('/api/download', require('./download'));
+app.use('/api/notifications', require('./notifications'));
+app.use('/api/reservations', require('./reservations'));
+app.use('/api/places', require('./places'));
+
+// ================= HEALTH CHECK =================
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', message: 'WayEase API is running' });
+  res.json({
+    status: 'ok',
+    message: 'WayEase server is running',
+    timestamp: new Date()
+  });
 });
 
-// Fallback: serve index.html for non-API GET requests (useful when visiting from browser)
-app.get('*', (req, res, next) => {
-  if (req.path.startsWith('/api')) return next();
-  res.sendFile(path.join(__dirname, '..', 'wayease-frontend', 'index.html'));
+// ================= FALLBACK =================
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../wayease-frontend', 'index.html'));
 });
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error('Error:', err);
-  res.status(500).json({ error: 'Internal server error' });
-});
-
-// 404 handler for API routes
-app.use((req, res) => {
-  if (req.path.startsWith('/api')) return res.status(404).json({ error: 'Route not found' });
-  res.status(404).send('Not Found');
-});
-
-// Start server
+// ================= START SERVER =================
 app.listen(PORT, () => {
-  console.log(`🚀 WayEase Backend Server running on http://localhost:${PORT}`);
-  console.log(`📊 Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`🚀 WayEase running at http://localhost:${PORT}`);
 });
-
-module.exports = app;
-

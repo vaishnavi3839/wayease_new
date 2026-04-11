@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Virtual Diary</title>
+
+  <!-- React CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Caveat', cursive;
+      background: linear-gradient(135deg,white);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+
+<script type="text/babel">
+
+// 🔥 PASTE YOUR FULL DIARY CODE HERE (REMOVE "export default")
+const { useState, useRef, useEffect, useCallback } = React;
+
+const DIARY_THEMES = [
+  { id: "floral", name: "🌸 Floral Garden", cover: "linear-gradient(145deg,#f9a8d4,#fbcfe8,#e879f9)", spine: "#db2777", accent: "#ec4899", icon: "🌸" },
+  { id: "vintage", name: "📜 Vintage Leather", cover: "linear-gradient(145deg,#92400e,#b45309,#ca8a04)", spine: "#78350f", accent: "#fbbf24", icon: "📜" },
+  { id: "midnight", name: "🌙 Midnight Dreams", cover: "linear-gradient(145deg,#1e1b4b,#312e81,#6d28d9)", spine: "#1e1b4b", accent: "#c4b5fd", icon: "🌙" },
+  { id: "cottagecore", name: "🌿 Cottagecore", cover: "linear-gradient(145deg,#14532d,#166534,#15803d)", spine: "#14532d", accent: "#86efac", icon: "🌿" },
+  { id: "y2k", name: "🎀 Y2K Glam", cover: "linear-gradient(145deg,#be185d,#7c3aed,#0891b2)", spine: "#be185d", accent: "#f0abfc", icon: "🎀" },
+  { id: "academia", name: "🕯️ Dark Academia", cover: "linear-gradient(145deg,#44403c,#78350f,#451a03)", spine: "#292524", accent: "#fde68a", icon: "🕯️" },
+  { id: "cherry", name: "🍒 Cherry Blossom", cover: "linear-gradient(145deg,#fda4af,#fb7185,#f43f5e)", spine: "#e11d48", accent: "#fff1f2", icon: "🍒" },
+  { id: "ocean", name: "🌊 Ocean Dreams", cover: "linear-gradient(145deg,#0c4a6e,#0369a1,#0891b2)", spine: "#0c4a6e", accent: "#7dd3fc", icon: "🌊" },
+];
+
+const PAGE_STYLES = [
+  { id: "vintage", name: "📜 Vintage Parchment", bg: "#f5e6c8", lineColor: "#c9a96e44", textColor: "#3d2b1f", marginColor: "#e9a87844", label: "Vintage" },
+  { id: "clean", name: "📄 Clean White", bg: "#ffffff", lineColor: "#e5e7eb66", textColor: "#1f2937", marginColor: "#fca5a544", label: "Clean" },
+  { id: "blush", name: "🌸 Blush Pink", bg: "#fce4ec", lineColor: "#f48fb144", textColor: "#880e4f", marginColor: "#f48fb166", label: "Blush" },
+  { id: "sky", name: "💙 Sky Blue", bg: "#e3f2fd", lineColor: "#90caf944", textColor: "#0d47a1", marginColor: "#90caf966", label: "Sky" },
+  { id: "midnight", name: "🌙 Dark Night", bg: "#0f0f1a", lineColor: "#2d2d4e88", textColor: "#e2d9ff", marginColor: "#4c1d9544", label: "Night" },
+  { id: "sage", name: "🌿 Sage", bg: "#e8f5e9", lineColor: "#a5d6a744", textColor: "#1b5e20", marginColor: "#a5d6a766", label: "Sage" },
+  { id: "lavender", name: "💜 Lavender", bg: "#f3e5f5", lineColor: "#ce93d844", textColor: "#4a148c", marginColor: "#ce93d866", label: "Lavender" },
+  { id: "kraft", name: "📦 Kraft Paper", bg: "#c8a97a", lineColor: "#a0785044", textColor: "#2c1810", marginColor: "#a0785066", label: "Kraft" },
+  { id: "cream", name: "🍦 Cream", bg: "#fffbeb", lineColor: "#fde68a66", textColor: "#78350f", marginColor: "#fbbf2444", label: "Cream" },
+  { id: "rose", name: "🌹 Rose Gold", bg: "#fff0f0", lineColor: "#fca5a544", textColor: "#7f1d1d", marginColor: "#f8717166", label: "Rose" },
+];
+
+const FONTS = [
+  { id: "caveat", name: "✏️ Casual Scrawl", family: "'Caveat', cursive", size: 20 },
+  { id: "dancing", name: "💃 Elegant Script", family: "'Dancing Script', cursive", size: 20 },
+  { id: "kalam", name: "📝 Neat Handwriting", family: "'Kalam', cursive", size: 18 },
+  { id: "indie", name: "🌸 Indie Flower", family: "'Indie Flower', cursive", size: 17 },
+  { id: "sacramento", name: "✨ Fancy Script", family: "'Sacramento', cursive", size: 24 },
+  { id: "pacifico", name: "🏄 Playful Round", family: "'Pacifico', cursive", size: 16 },
+  { id: "patrick", name: "📓 Clean Print", family: "'Patrick Hand', cursive", size: 18 },
+  { id: "gloria", name: "🎨 Gloria Hallelujah", family: "'Gloria Hallelujah', cursive", size: 14 },
+];
+
+const STICKER_CATS = {
+  "🌸 Nature": ["🌸","🌺","🌷","🌻","🌼","💐","🍀","🌿","🍃","🌱","🌲","🌴","🪷","🍄","🌾","🌈","☀️","🌙","⭐","✨","💫","🌟","❄️","🍂","🍁","🌊","🏔️","🌋","🌅","🌄"],
+  "🦋 Creatures": ["🦋","🐝","🐞","🦄","🐱","🐻","🦊","🐰","🐸","🐨","🦢","🕊️","🦩","🐚","🪸","🐠","🦜","🐿️","🦔","🐙","🦀","🦞","🐬","🦭","🐧"],
+  "🍓 Treats": ["🍓","🍑","🍒","🍰","🧁","🍵","☕","🧋","🍩","🍪","🍫","🍬","🍭","🫐","🍇","🍋","🥐","🧇","🍦","🍮","🍡","🧆","🥞","🫖","🍜"],
+  "💖 Love": ["💝","💖","💗","💓","💞","💕","❤️","🧡","💛","💚","💙","💜","🖤","🤍","💌","💘","🫶","❣️","💟","🫀","💋","💄","🌹","🥀","💍"],
+  "🎀 Cute Stuff": ["🎀","🎁","🎊","🎉","🎈","🪄","🎠","🎡","🎢","🌂","🪆","🧸","🪅","🎪","🃏","🎭","🎨","🖼️","🪞","🪜","🧿","🎋","🌂","☂️"],
+  "📚 Study Vibes": ["📚","📖","✏️","🖊️","📝","📐","📏","🔭","🔬","💡","🕯️","🗝️","📜","🖋️","⌨️","💻","📷","📸","🎞️","🗒️","📌","📎","🔖","🗺️","🧮"],
+  "🎵 Music & Vibes": ["🎵","🎶","🎸","🎹","🎺","🎻","🥁","🎤","🎧","📻","🎬","🎮","🕹️","👾","🎯","🎲","🎰","🎱","🏆","🥇","🎖️","🏅","🪘","🪗"],
+  "✈️ Adventure": ["✈️","🚂","🚢","🏖️","🏕️","🗺️","🧳","🌍","🌏","🌎","🗼","🏯","🗽","⛩️","🏰","🏝️","🏜️","🧭","⛺","🚁","🚀","🛸","🌌","🔭"],
+  "🌙 Y2K & Retro": ["💿","📱","🌐","🖥️","📞","📺","📷","🎞️","🕹️","💾","📟","📠","⌚","📡","🔋","💡","🔦","🕰️","⏰","📡","🛰️","🚗","🏎️"],
+  "🕯️ Dark Academia": ["🕯️","📜","🗝️","🏛️","☕","🖋️","🦅","🌑","🌒","🌓","🌔","⚗️","🔮","💀","🦇","🌿","🕰️","📿","🗡️","🛡️","📚","🪶","🧪"],
+};
+
+const MOODS = [
+  { emoji: "😊", label: "Happy", color: "#fbbf24" },
+  { emoji: "😌", label: "Peaceful", color: "#6ee7b7" },
+  { emoji: "😍", label: "In Love", color: "#f9a8d4" },
+  { emoji: "🥰", label: "Grateful", color: "#fdba74" },
+  { emoji: "😴", label: "Tired", color: "#93c5fd" },
+  { emoji: "😢", label: "Sad", color: "#60a5fa" },
+  { emoji: "😤", label: "Frustrated", color: "#f87171" },
+  { emoji: "😰", label: "Anxious", color: "#d8b4fe" },
+  { emoji: "🤩", label: "Excited", color: "#fde68a" },
+  { emoji: "😎", label: "Cool", color: "#6ee7b7" },
+  { emoji: "🫶", label: "Loved", color: "#fda4af" },
+  { emoji: "🌙", label: "Dreamy", color: "#c4b5fd" },
+  { emoji: "🔥", label: "Motivated", color: "#fb923c" },
+  { emoji: "🤔", label: "Thoughtful", color: "#a78bfa" },
+  { emoji: "🥳", label: "Celebratory", color: "#f472b6" },
+];
+
+const QUOTES = [
+  "She is too fond of books, and it has turned her brain. 📚",
+  "Not all those who wander are lost. 🌿",
+  "You are enough, a thousand times enough. 💖",
+  "Bloom where you are planted. 🌸",
+  "She believed she could, so she did. 🌟",
+  "Be a wildflower in a world of roses. 🌼",
+  "Write it on your heart that every day is the best day. 📝",
+  "Live in the sunshine, swim the sea, drink the wild air. ☀️",
+  "Collect moments, not things. ✨",
+  "Life is short, make it sweet. 🍒",
+  "Stay close to anything that makes you glad to be alive. 🌿",
+  "Do more things that make you forget to check your phone. 🌸",
+];
+
+const WEATHER = ["☀️ Sunny","⛅ Cloudy","🌧️ Rainy","❄️ Snowy","🌈 Rainbow","🌙 Starry","💨 Windy","🌫️ Foggy"];
+
+const newPageData = () => ({ text: "", stickers: [], photos: [], mood: null, weather: null, title: "" });
+
+function DearDairy() {
+  const [screen, setScreen] = useState("cover");
+  const [theme, setTheme] = useState(DIARY_THEMES[0]);
+  const [pageStyle, setPageStyle] = useState(PAGE_STYLES[0]);
+  const [font, setFont] = useState(FONTS[0]);
+  const [activePanel, setActivePanel] = useState(null);
+  const [stickerCat, setStickerCat] = useState("🌸 Nature");
+  const [pageNum, setPageNum] = useState(1);
+  const [pages, setPages] = useState({ 1: newPageData() });
+  const [quote] = useState(QUOTES[Math.floor(Math.random() * QUOTES.length)]);
+  const [dragging, setDragging] = useState(null);
+  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+  const [stickerSize, setStickerSize] = useState(36);
+  const [showDeleteHint, setShowDeleteHint] = useState(false);
+  const pageRef = useRef(null);
+  const fileRef = useRef(null);
+  const textRef = useRef(null);
+
+  const today = new Date();
+  const dateStr = today.toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Dancing+Script:wght@400;600;700&family=Kalam:wght@300;400;700&family=Indie+Flower&family=Sacramento&family=Pacifico&family=Patrick+Hand&family=Gloria+Hallelujah&display=swap";
+    document.head.appendChild(link);
+    return () => document.head.removeChild(link);
+  }, []);
+
+  const page = pages[pageNum] || newPageData();
+  const updatePage = (updates) => setPages(p => ({ ...p, [pageNum]: { ...(p[pageNum] || newPageData()), ...updates } }));
+
+  const addNewPage = () => {
+    const next = Math.max(...Object.keys(pages).map(Number)) + 1;
+    setPages(p => ({ ...p, [next]: newPageData() }));
+    setPageNum(next);
+  };
+
+  const handleMouseDown = (e, id, type) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!pageRef.current) return;
+    const rect = pageRef.current.getBoundingClientRect();
+    const items = type === "sticker" ? page.stickers : page.photos;
+    const item = items.find(i => i.id === id);
+    if (!item) return;
+    setDragging({ id, type });
+    setDragOffset({ x: e.clientX - rect.left - item.x, y: e.clientY - rect.top - item.y });
+    setShowDeleteHint(true);
+  };
+
+  const handleTouchStart = (e, id, type) => {
+    const touch = e.touches[0];
+    handleMouseDown({ ...touch, preventDefault: () => {}, stopPropagation: () => {} }, id, type);
+  };
+
+  const handleMouseMove = useCallback((e) => {
+    if (!dragging || !pageRef.current) return;
+    const rect = pageRef.current.getBoundingClientRect();
+    const x = Math.max(0, Math.min(rect.width - 60, e.clientX - rect.left - dragOffset.x));
+    const y = Math.max(0, Math.min(rect.height - 60, e.clientY - rect.top - dragOffset.y));
+    if (dragging.type === "sticker") {
+      updatePage({ stickers: page.stickers.map(s => s.id === dragging.id ? { ...s, x, y } : s) });
+    } else {
+      updatePage({ photos: page.photos.map(p => p.id === dragging.id ? { ...p, x, y } : p) });
+    }
+  }, [dragging, dragOffset, page]);
+
+  const handleTouchMove = useCallback((e) => {
+    if (!dragging) return;
+    e.preventDefault();
+    handleMouseMove(e.touches[0]);
+  }, [dragging, handleMouseMove]);
+
+  const handleMouseUp = () => { setDragging(null); setShowDeleteHint(false); };
+
+  const addSticker = (emoji) => {
+    const s = { id: Date.now(), emoji, x: 80 + Math.random() * 200, y: 120 + Math.random() * 200, size: stickerSize, rotation: (Math.random() - 0.5) * 20 };
+    updatePage({ stickers: [...(page.stickers || []), s] });
+  };
+
+  const removeSticker = (id) => updatePage({ stickers: page.stickers.filter(s => s.id !== id) });
+  const removePhoto = (id) => updatePage({ photos: page.photos.filter(p => p.id !== id) });
+
+  const handlePhotoUpload = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      const photo = { id: Date.now(), src: ev.target.result, x: 60 + Math.random() * 80, y: 100 + Math.random() * 100, rotation: (Math.random() - 0.5) * 14, caption: "✨", width: 140 };
+      updatePage({ photos: [...(page.photos || []), photo] });
+    };
+    reader.readAsDataURL(file);
+    e.target.value = "";
+  };
+
+  const renderPageLines = () => {
+    return Array.from({ length: 22 }, (_, i) => (
+      <div key={i} style={{ position: "absolute", left: 0, right: 0, top: `${110 + i * 32}px`, height: "1px", background: pageStyle.lineColor, pointerEvents: "none" }} />
+    ));
+  };
+
+  // ---- COVER SCREEN ----
+  if (screen === "cover") {
+    return (
+      <div style={{ minHeight: "100vh", background: "linear-gradient(135deg, #fdf2f8 0%, #fce7f3 40%, #f3e8ff 100%)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", fontFamily: "'Caveat', cursive", padding: "20px", overflowX: "hidden", position: "relative" }}>
+        <style>{`
+          @keyframes floatAnim { 0%,100%{transform:translateY(0) rotate(-5deg)} 50%{transform:translateY(-18px) rotate(5deg)} }
+          @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+          @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.08)} }
+          @keyframes shimmer { 0%{opacity:.6} 50%{opacity:1} 100%{opacity:.6} }
+          @keyframes bookOpen { from{transform:perspective(600px) rotateY(-15deg) scale(0.9)} to{transform:perspective(600px) rotateY(0deg) scale(1)} }
+          .cover-float { animation: floatAnim 3.5s ease-in-out infinite; }
+          .cover-book { animation: bookOpen 0.7s ease-out; }
+          .open-btn:hover { transform: scale(1.05) !important; box-shadow: 0 10px 30px rgba(236,72,153,0.4) !important; }
+          .theme-dot:hover { transform: scale(1.3) !important; }
+        `}</style>
+
+        {["🌸","✨","💫","🌷","💖","🌿","⭐","🦋","🎀","🌼"].map((e, i) => (
+          <div key={i} className="cover-float" style={{ position: "absolute", fontSize: "22px", top: `${8 + (i * 9)}%`, left: i % 2 === 0 ? `${4 + i * 3}%` : `${78 + i * 2}%`, animationDelay: `${i * 0.3}s` }}>{e}</div>
+        ))}
+
+        <div style={{ animation: "fadeUp 0.5s ease-out", marginBottom: "8px" }}>
+          <div style={{ fontFamily: "'Dancing Script', cursive", fontSize: "clamp(14px,3vw,18px)", color: "#9d174d", textAlign: "center", opacity: 0.7, letterSpacing: "3px", textTransform: "uppercase" }}>welcome to your</div>
+        </div>
+
+        <div className="cover-book" style={{ width: "min(300px, 85vw)", cursor: "pointer", marginBottom: "24px", filter: "drop-shadow(8px 12px 24px rgba(0,0,0,0.2))", animation: "bookOpen 0.7s ease-out" }} onClick={() => setScreen("diary")}>
+          <div style={{ background: theme.cover, borderRadius: "4px 16px 16px 4px", padding: "36px 24px 36px 30px", position: "relative", transition: "transform 0.3s" }}
+            onMouseEnter={e => e.currentTarget.style.transform = "scale(1.02) rotate(-0.5deg)"}
+            onMouseLeave={e => e.currentTarget.style.transform = ""}>
+            <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: "14px", background: theme.spine, borderRadius: "4px 0 0 4px", boxShadow: "inset -3px 0 6px rgba(0,0,0,0.2)" }} />
+            <div style={{ position: "absolute", top: 0, right: "24px", width: "18px", height: "52px", background: "linear-gradient(180deg,#fbbf24,#f59e0b)", clipPath: "polygon(0 0,100% 0,100% 100%,50% 88%,0 100%)", boxShadow: "2px 2px 4px rgba(0,0,0,0.2)" }} />
+            <div style={{ border: "1.5px solid rgba(255,255,255,0.35)", borderRadius: "10px", padding: "20px", textAlign: "center", background: "rgba(255,255,255,0.12)", backdropFilter: "blur(4px)" }}>
+              <div style={{ fontSize: "52px", marginBottom: "12px", animation: "pulse 2.5s infinite" }}>{theme.icon}</div>
+              <div style={{ fontFamily: "'Dancing Script', cursive", fontSize: "clamp(28px,6vw,38px)", fontWeight: 700, color: "white", textShadow: "2px 2px 6px rgba(0,0,0,0.25)", letterSpacing: "1px" }}>Dear Dairy</div>
+              <div style={{ color: "rgba(255,255,255,0.8)", fontSize: "14px", marginTop: "6px", fontStyle: "italic", animation: "shimmer 3s infinite" }}>my secret garden 🌿</div>
+              <div style={{ marginTop: "12px", fontSize: "12px", color: "rgba(255,255,255,0.6)" }}>{dateStr}</div>
+              <div style={{ marginTop: "8px", display: "inline-block", background: "rgba(255,255,255,0.2)", borderRadius: "20px", padding: "4px 14px", fontSize: "13px", color: "white" }}>tap to open ✨</div>
+            </div>
+          </div>
+        </div>
+
+        <div style={{ animation: "fadeUp 0.5s ease-out 0.2s both", textAlign: "center", marginBottom: "16px" }}>
+          <div style={{ fontSize: "15px", color: "#9d174d", opacity: 0.8, marginBottom: "10px" }}>choose your cover ✨</div>
+          <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center" }}>
+            {DIARY_THEMES.map(t => (
+              <button key={t.id} className="theme-dot" onClick={() => setTheme(t)} style={{ width: "38px", height: "38px", borderRadius: "10px", background: t.cover, border: theme.id === t.id ? "3px solid white" : "2px solid rgba(255,255,255,0.4)", cursor: "pointer", transition: "all 0.2s", boxShadow: theme.id === t.id ? "0 0 14px rgba(255,255,255,0.7)" : "0 2px 8px rgba(0,0,0,0.15)", fontSize: "16px" }} title={t.name}>
+                {theme.id === t.id ? "✓" : ""}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <button className="open-btn" onClick={() => setScreen("diary")} style={{ fontFamily: "'Dancing Script', cursive", fontSize: "18px", background: "linear-gradient(135deg,#87cfbe,#6ee7b7)", color: "white", border: "none", borderRadius: "30px", padding: "12px 32px", cursor: "pointer", boxShadow: "0 6px 20px rgba(236,72,153,0.3)", transition: "all 0.3s", animation: "fadeUp 0.5s ease-out 0.4s both" }}>
+          Open My Diary 🌸
+        </button>
+      </div>
+    );
+  }
+
+  // ---- DIARY SCREEN ----
+  const totalPages = Math.max(pageNum, Object.keys(pages).length);
+
+  return (
+    <div style={{ minHeight: "100vh", background: "#f9fafb", display: "flex", flexDirection: "column", fontFamily: "'Caveat', cursive", userSelect: "none" }}
+      onMouseMove={handleMouseMove} onMouseUp={handleMouseUp} onTouchMove={handleTouchMove} onTouchEnd={handleMouseUp}>
+
+      <style>{`
+        @keyframes slideDown { from{opacity:0;transform:translateY(-10px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes slideUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes wiggle { 0%,100%{transform:rotate(-3deg)} 50%{transform:rotate(3deg)} }
+        .panel-in { animation: slideDown 0.25s ease-out; }
+        .tool-btn:hover { opacity: 0.85; transform: translateY(-1px) !important; }
+        .sticker-pick:hover { transform: scale(1.4) !important; background: rgba(249,168,212,0.3) !important; border-radius: 8px; }
+        textarea { resize: none !important; border: none !important; outline: none !important; background: transparent !important; }
+        textarea::placeholder { opacity: 0.4; font-style: italic; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background: rgba(236,72,153,0.25); border-radius: 2px; }
+        .page-nav:hover { background: rgba(249,168,212,0.5) !important; }
+        .mood-btn:hover { transform: scale(1.08) !important; }
+      `}</style>
+
+      {/* HEADER */}
+      <div style={{ background: theme.cover, padding: "10px 14px", display: "flex", alignItems: "center", justifyContent: "space-between", boxShadow: "0 2px 12px rgba(0,0,0,0.15)", flexShrink: 0 }}>
+        <button onClick={() => setScreen("cover")} style={{ background: "rgba(255,255,255,0.25)", border: "1px solid rgba(255,255,255,0.4)", color: "white", borderRadius: "10px", padding: "6px 12px", cursor: "pointer", fontFamily: "'Caveat', cursive", fontSize: "15px", transition: "all 0.2s" }}>
+          ← cover
+        </button>
+        <div style={{ fontFamily: "'Dancing Script', cursive", fontSize: "clamp(18px,4vw,26px)", fontWeight: 700, color: "white", textShadow: "1px 1px 4px rgba(0,0,0,0.25)", display: "flex", alignItems: "center", gap: "8px" }}>
+          {theme.icon} Dear Dairy
+        </div>
+        <div style={{ color: "rgba(255,255,255,0.9)", fontSize: "14px", background: "rgba(255,255,255,0.2)", padding: "4px 10px", borderRadius: "10px" }}>
+          pg {pageNum}/{totalPages}
+        </div>
+      </div>
+
+      {/* TOOLBAR */}
+      <div style={{ background: "rgba(255,255,255,0.88)", backdropFilter: "blur(12px)", borderBottom: "1px solid rgba(236,72,153,0.15)", padding: "8px 10px", display: "flex", gap: "6px", flexWrap: "wrap", alignItems: "center", overflowX: "auto", flexShrink: 0 }}>
+        {[
+          { id: "book", icon: "📚", label: "Cover" },
+          { id: "page", icon: "📄", label: "Page Style" },
+          { id: "font", icon: "✍️", label: "Font" },
+          { id: "stickers", icon: "🌸", label: "Stickers" },
+          { id: "mood", icon: "🎭", label: "Mood" },
+          { id: "weather", icon: "☀️", label: "Weather" },
+        ].map(t => (
+          <button key={t.id} className="tool-btn" onClick={() => setActivePanel(activePanel === t.id ? null : t.id)} style={{ background: activePanel === t.id ? "linear-gradient(135deg,#ec4899,#a855f7)" : "rgba(249,168,212,0.25)", border: "none", borderRadius: "12px", padding: "6px 12px", cursor: "pointer", fontSize: "13px", color: activePanel === t.id ? "white" : "#9d174d", fontFamily: "'Caveat', cursive", display: "flex", alignItems: "center", gap: "4px", transition: "all 0.2s", boxShadow: activePanel === t.id ? "0 3px 10px rgba(168,85,247,0.35)" : "none", whiteSpace: "nowrap", fontWeight: activePanel === t.id ? 600 : 400 }}>
+            {t.icon} {t.label}
+          </button>
+        ))}
+
+        <button className="tool-btn" onClick={() => fileRef.current?.click()} style={{ background: "rgba(249,168,212,0.25)", border: "none", borderRadius: "12px", padding: "6px 12px", cursor: "pointer", fontSize: "13px", color: "#9d174d", fontFamily: "'Caveat', cursive", display: "flex", alignItems: "center", gap: "4px", transition: "all 0.2s", whiteSpace: "nowrap" }}>
+          📷 Photo
+        </button>
+        <input ref={fileRef} type="file" accept="image/*" style={{ display: "none" }} onChange={handlePhotoUpload} />
+
+        <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "6px" }}>
+          <button className="page-nav" onClick={() => setPageNum(p => Math.max(1, p - 1))} style={{ background: "rgba(249,168,212,0.25)", border: "none", borderRadius: "8px", padding: "4px 10px", cursor: "pointer", fontSize: "16px", transition: "all 0.2s" }}>‹</button>
+          <button className="page-nav" onClick={addNewPage} style={{ background: "rgba(249,168,212,0.25)", border: "none", borderRadius: "8px", padding: "4px 10px", cursor: "pointer", fontSize: "13px", color: "#9d174d", fontFamily: "'Caveat', cursive", transition: "all 0.2s" }}>+ page</button>
+          <button className="page-nav" onClick={() => setPageNum(p => Math.min(totalPages, p + 1))} style={{ background: "rgba(249,168,212,0.25)", border: "none", borderRadius: "8px", padding: "4px 10px", cursor: "pointer", fontSize: "16px", transition: "all 0.2s" }}>›</button>
+        </div>
+      </div>
+
+      {/* PANEL */}
+      {activePanel && (
+        <div className="panel-in" style={{ background: "rgba(255,255,255,0.96)", backdropFilter: "blur(12px)", borderBottom: "1px solid rgba(236,72,153,0.12)", padding: "14px 14px 10px", maxHeight: "220px", overflowY: "auto", flexShrink: 0 }}>
+
+          {activePanel === "book" && (
+            <div>
+              <div style={{ fontSize: "13px", color: "#9d174d", marginBottom: "10px", fontWeight: 600 }}>Choose your diary cover ✨</div>
+              <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+                {DIARY_THEMES.map(t => (
+                  <button key={t.id} onClick={() => setTheme(t)} style={{ background: t.cover, border: theme.id === t.id ? "3px solid #ec4899" : "2px solid transparent", borderRadius: "12px", padding: "8px 16px", cursor: "pointer", color: "white", fontFamily: "'Caveat', cursive", fontSize: "13px", boxShadow: theme.id === t.id ? "0 0 14px rgba(236,72,153,0.5)" : "0 2px 8px rgba(0,0,0,0.1)", transition: "all 0.2s", fontWeight: theme.id === t.id ? 700 : 400 }}>
+                    {t.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {activePanel === "page" && (
+            <div>
+              <div style={{ fontSize: "13px", color: "#9d174d", marginBottom: "10px", fontWeight: 600 }}>Choose page style 📄</div>
+              <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+                {PAGE_STYLES.map(p => (
+                  <button key={p.id} onClick={() => setPageStyle(p)} style={{ background: p.bg, border: pageStyle.id === p.id ? "2.5px solid #ec4899" : "1.5px solid rgba(0,0,0,0.12)", borderRadius: "10px", padding: "6px 14px", cursor: "pointer", color: p.textColor, fontFamily: "'Caveat', cursive", fontSize: "14px", boxShadow: pageStyle.id === p.id ? "0 0 10px rgba(236,72,153,0.4)" : "0 1px 4px rgba(0,0,0,0.08)", transition: "all 0.2s", fontWeight: pageStyle.id === p.id ? 700 : 400 }}>
+                    {p.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {activePanel === "font" && (
+            <div>
+              <div style={{ fontSize: "13px", color: "#9d174d", marginBottom: "10px", fontWeight: 600 }}>Choose your handwriting ✍️</div>
+              <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+                {FONTS.map(f => (
+                  <button key={f.id} onClick={() => setFont(f)} style={{ background: font.id === f.id ? "linear-gradient(135deg,#fce7f3,#f3e8ff)" : "rgba(249,168,212,0.15)", border: font.id === f.id ? "2px solid #ec4899" : "1.5px solid rgba(236,72,153,0.2)", borderRadius: "10px", padding: "7px 16px", cursor: "pointer", color: "#9d174d", fontFamily: f.family, fontSize: "17px", boxShadow: font.id === f.id ? "0 0 10px rgba(236,72,153,0.3)" : "none", transition: "all 0.2s" }}>
+                    {f.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {activePanel === "stickers" && (
+            <div>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+                <div style={{ display: "flex", gap: "5px", overflowX: "auto", flex: 1, paddingBottom: "2px" }}>
+                  {Object.keys(STICKER_CATS).map(cat => (
+                    <button key={cat} onClick={() => setStickerCat(cat)} style={{ background: stickerCat === cat ? "linear-gradient(135deg,#ec4899,#a855f7)" : "rgba(249,168,212,0.2)", border: "none", borderRadius: "20px", padding: "4px 10px", cursor: "pointer", fontSize: "11px", color: stickerCat === cat ? "white" : "#9d174d", fontFamily: "'Caveat', cursive", whiteSpace: "nowrap", transition: "all 0.2s", flexShrink: 0 }}>
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: "6px", marginLeft: "10px", flexShrink: 0 }}>
+                  <span style={{ fontSize: "11px", color: "#9d174d" }}>size</span>
+                  <input type="range" min="20" max="64" value={stickerSize} onChange={e => setStickerSize(Number(e.target.value))} style={{ width: "60px", accentColor: "#ec4899" }} />
+                  <span style={{ fontSize: "16px" }}>{STICKER_CATS[stickerCat][0]}</span>
+                </div>
+              </div>
+              <div style={{ display: "flex", gap: "4px", flexWrap: "wrap" }}>
+                {STICKER_CATS[stickerCat].map((emoji, i) => (
+                  <button key={i} className="sticker-pick" onClick={() => addSticker(emoji)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: "22px", padding: "5px", transition: "transform 0.15s" }}>
+                    {emoji}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {activePanel === "mood" && (
+            <div>
+              <div style={{ fontSize: "13px", color: "#9d174d", marginBottom: "10px", fontWeight: 600 }}>How are you feeling today? 🎭</div>
+              <div style={{ display: "flex", gap: "7px", flexWrap: "wrap" }}>
+                {MOODS.map(m => (
+                  <button key={m.label} className="mood-btn" onClick={() => { updatePage({ mood: m }); setActivePanel(null); }} style={{ background: page.mood?.label === m.label ? m.color : `${m.color}30`, border: `1.5px solid ${m.color}`, borderRadius: "12px", padding: "5px 12px", cursor: "pointer", fontFamily: "'Caveat', cursive", fontSize: "14px", color: page.mood?.label === m.label ? "#1a1a1a" : "#374151", transition: "all 0.2s", fontWeight: page.mood?.label === m.label ? 700 : 400 }}>
+                    {m.emoji} {m.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {activePanel === "weather" && (
+            <div>
+              <div style={{ fontSize: "13px", color: "#9d174d", marginBottom: "10px", fontWeight: 600 }}>Today's weather ☀️</div>
+              <div style={{ display: "flex", gap: "7px", flexWrap: "wrap" }}>
+                {WEATHER.map(w => (
+                  <button key={w} onClick={() => { updatePage({ weather: w }); setActivePanel(null); }} style={{ background: page.weather === w ? "linear-gradient(135deg,#fce7f3,#f3e8ff)" : "rgba(249,168,212,0.15)", border: page.weather === w ? "2px solid #ec4899" : "1.5px solid rgba(236,72,153,0.2)", borderRadius: "12px", padding: "6px 14px", cursor: "pointer", fontFamily: "'Caveat', cursive", fontSize: "15px", color: "#9d174d", transition: "all 0.2s" }}>
+                    {w}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* MAIN JOURNAL PAGE */}
+      <div style={{ flex: 1, padding: "14px 12px", display: "flex", justifyContent: "center", overflowY: "auto" }}>
+        <div ref={pageRef} style={{ width: "min(580px, 100%)", minHeight: "680px", background: pageStyle.bg, borderRadius: "4px 14px 14px 4px", boxShadow: "6px 8px 30px rgba(0,0,0,0.14), -2px 0 0 rgba(0,0,0,0.04), inset 0 0 0 1px rgba(0,0,0,0.04)", position: "relative", overflow: "hidden" }}>
+
+          {/* Paper lines */}
+          {renderPageLines()}
+
+          {/* Margin line */}
+          <div style={{ position: "absolute", left: "56px", top: 0, bottom: 0, width: "1.5px", background: pageStyle.marginColor, pointerEvents: "none", zIndex: 1 }} />
+
+          {/* Spine detail */}
+          <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: "8px", background: `${pageStyle.lineColor}`, zIndex: 2 }} />
+
+          {/* Page header zone */}
+          <div style={{ padding: "16px 18px 8px 66px", position: "relative", zIndex: 3 }}>
+            {/* Title input */}
+            <input value={page.title || ""} onChange={e => updatePage({ title: e.target.value })} placeholder="✨ give this page a title..." style={{ width: "100%", background: "transparent", border: "none", outline: "none", fontFamily: font.family, fontSize: "clamp(18px,4vw,24px)", color: pageStyle.textColor, fontWeight: 700, marginBottom: "6px", boxSizing: "border-box", userSelect: "text" }} />
+
+            <div style={{ display: "flex", gap: "8px", alignItems: "center", flexWrap: "wrap", borderBottom: `1.5px solid ${pageStyle.lineColor}`, paddingBottom: "8px", marginBottom: "4px" }}>
+              <div style={{ fontFamily: "'Kalam', cursive", fontSize: "13px", color: pageStyle.textColor, opacity: 0.55 }}>{dateStr}</div>
+              {page.weather && <div style={{ fontSize: "12px", background: "rgba(255,255,255,0.5)", borderRadius: "12px", padding: "2px 8px", color: pageStyle.textColor, opacity: 0.8 }}>{page.weather}</div>}
+              {page.mood && (
+                <div style={{ display: "inline-flex", alignItems: "center", gap: "4px", background: `${page.mood.color}30`, border: `1px solid ${page.mood.color}`, borderRadius: "20px", padding: "2px 10px", fontSize: "13px", color: pageStyle.textColor }}>
+                  {page.mood.emoji} {page.mood.label}
+                </div>
+              )}
+              <div style={{ marginLeft: "auto", fontSize: "12px", color: pageStyle.textColor, opacity: 0.35 }}>pg {pageNum}</div>
+            </div>
+
+            {/* Quote */}
+            <div style={{ fontSize: "11px", color: pageStyle.textColor, opacity: 0.45, fontStyle: "italic", fontFamily: "'Kalam', cursive", padding: "3px 0 4px" }}>{quote}</div>
+          </div>
+
+          {/* Writing area */}
+          <div style={{ padding: "0 18px 24px 66px", position: "relative", zIndex: 3 }}>
+            <textarea ref={textRef} value={page.text || ""} onChange={e => updatePage({ text: e.target.value })} placeholder={"Dear Dairy,\n\nToday I want to tell you about..."} style={{ width: "100%", minHeight: "460px", fontFamily: font.family, fontSize: `${font.size}px`, lineHeight: "32px", color: pageStyle.textColor, caretColor: "#ec4899", boxSizing: "border-box", padding: 0 }} />
+          </div>
+
+          {/* Placed Stickers */}
+          {(page.stickers || []).map(s => (
+            <div key={s.id} onMouseDown={e => handleMouseDown(e, s.id, "sticker")} onTouchStart={e => handleTouchStart(e, s.id, "sticker")} onDoubleClick={() => removeSticker(s.id)} style={{ position: "absolute", left: s.x, top: s.y, fontSize: `${s.size}px`, cursor: dragging?.id === s.id ? "grabbing" : "grab", zIndex: 20, lineHeight: 1, userSelect: "none", transform: `rotate(${s.rotation}deg)`, transition: dragging?.id === s.id ? "none" : "transform 0.1s", filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.15))" }} title="Double-click to remove">
+              {s.emoji}
+            </div>
+          ))}
+
+          {/* Placed Photos */}
+          {(page.photos || []).map(ph => (
+            <div key={ph.id} onMouseDown={e => handleMouseDown(e, ph.id, "photo")} onTouchStart={e => handleTouchStart(e, ph.id, "photo")} onDoubleClick={() => removePhoto(ph.id)} style={{ position: "absolute", left: ph.x, top: ph.y, transform: `rotate(${ph.rotation}deg)`, cursor: dragging?.id === ph.id ? "grabbing" : "grab", zIndex: 21, background: "white", padding: "7px 7px 26px 7px", boxShadow: "3px 4px 14px rgba(0,0,0,0.2)", userSelect: "none", width: ph.width + "px", transition: dragging?.id === ph.id ? "none" : "box-shadow 0.2s" }} title="Double-click to remove">
+              <img src={ph.src} alt="" style={{ width: "100%", display: "block", pointerEvents: "none" }} />
+              <div style={{ textAlign: "center", fontSize: "12px", fontFamily: "'Caveat', cursive", color: "#555", marginTop: "4px", fontStyle: "italic" }}>{ph.caption}</div>
+            </div>
+          ))}
+
+          {/* Decorative corner watermark */}
+          <div style={{ position: "absolute", bottom: "16px", right: "16px", fontSize: "56px", opacity: 0.05, pointerEvents: "none", transform: "rotate(-15deg)" }}>{theme.icon}</div>
+
+          {/* Washi tape top */}
+          <div style={{ position: "absolute", top: "-4px", left: "40%", width: "80px", height: "22px", background: `${theme.accent}55`, transform: "rotate(-1deg)", borderRadius: "2px", pointerEvents: "none", zIndex: 25, border: `1px solid ${theme.accent}33` }} />
+        </div>
+      </div>
+
+      {/* STATUS BAR */}
+      <div style={{ background: "rgba(255,255,255,0.82)", backdropFilter: "blur(10px)", borderTop: "1px solid rgba(236,72,153,0.12)", padding: "7px 14px", display: "flex", alignItems: "center", justifyContent: "space-between", fontSize: "12px", color: "#9d174d", fontFamily: "'Caveat', cursive", flexShrink: 0, gap: "8px", flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+          <span>✨ drag stickers & photos</span>
+          <span style={{ opacity: 0.5 }}>|</span>
+          <span>💖 double-click to remove</span>
+        </div>
+        <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+          <span style={{ opacity: 0.6 }}>{(page.stickers || []).length} stickers · {(page.photos || []).length} photos</span>
+          <span style={{ opacity: 0.5 }}>|</span>
+          <span>{(page.text || "").split(/\s+/).filter(Boolean).length} words 📝</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+
+
+// KEEP EVERYTHING ELSE SAME
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<DearDairy />);
+
+</script>
+</body>
+</html>

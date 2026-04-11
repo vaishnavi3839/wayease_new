@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All places — WayEase</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>tailwind.config = { theme: { extend: { colors: { primary: '#87cfbe' } } } };</script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <header class="bg-white border-b border-gray-200 sticky top-0 z-20">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-3">
+      <div>
+        <h1 id="all-places-title" class="text-xl font-bold text-gray-900">All places</h1>
+        <p class="text-sm text-gray-500" id="all-places-sub">Loading…</p>
+      </div>
+      <a href="index.html" class="text-sm font-medium text-primary hover:underline">← Home</a>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-5xl mx-auto px-4 py-6 w-full">
+    <div id="all-places-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    <div class="text-center mt-8">
+      <button type="button" id="all-places-more" class="hidden px-6 py-2.5 rounded-full bg-primary text-white text-sm font-medium hover:opacity-95">Load more</button>
+    </div>
+  </main>
+  <div id="wayease-footer-root"></div>
+
+  <script src="app.js"></script>
+  <script src="footer.js"></script>
+  <script>
+    (function () {
+      const API_BASE = window.location.protocol === 'file:' ? 'http://localhost:3000/api' : (window.location.origin + '/api');
+      const params = new URLSearchParams(window.location.search);
+      const city = params.get('city') || 'Bangalore';
+      document.getElementById('all-places-title').textContent = 'All ' + city + ' places';
+      const grid = document.getElementById('all-places-grid');
+      const sub = document.getElementById('all-places-sub');
+      const moreBtn = document.getElementById('all-places-more');
+      let page = 1;
+      let hasMore = true;
+      let loading = false;
+
+      grid.addEventListener('click', (e) => {
+        const art = e.target.closest('[data-pid]');
+        if (art && window.showPlaceDetails) window.showPlaceDetails(art.getAttribute('data-pid'));
+      });
+
+      function esc(s) {
+        return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+      }
+      function card(p) {
+        const img = p.image || ('https://picsum.photos/seed/' + encodeURIComponent(p.id) + '/400/240');
+        const offer = p.offerLabel ? '<span class="text-[0.65rem] bg-amber-100 text-amber-900 px-2 py-0.5 rounded-full font-semibold">' + esc(p.offerLabel) + '</span>' : '';
+        return '<article class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden cursor-pointer hover:shadow-md transition group" data-pid="' + esc(p.id) + '">' +
+          '<div class="h-44 bg-gray-200 overflow-hidden"><img src="' + esc(img) + '" alt="" class="w-full h-full object-cover group-hover:scale-105 transition duration-300"></div>' +
+          '<div class="p-4"><div class="flex items-start justify-between gap-2"><h2 class="font-semibold text-gray-900">' + esc(p.name) + '</h2>' + offer + '</div>' +
+          '<p class="text-xs text-gray-500 mt-1">' + esc(p.type || '') + ' · ★' + (p.rating || '') + '</p></div></article>';
+      }
+
+      async function load(reset) {
+        if (loading || !hasMore) return;
+        loading = true;
+        if (reset) {
+          page = 1;
+          grid.innerHTML = '<p class="col-span-full text-center text-gray-500 py-8">Loading places…</p>';
+        }
+        const q = new URLSearchParams();
+        q.set('city', city);
+        q.set('page', String(page));
+        q.set('page_size', '18');
+        try {
+          const res = await fetch(API_BASE + '/places?' + q.toString());
+          const data = await res.json();
+          const places = data.places || [];
+          hasMore = !!data.hasMore;
+          if (reset) grid.innerHTML = '';
+          if (!places.length && page === 1) {
+            grid.innerHTML = '<p class="col-span-full text-center text-gray-500">No places found. Is the API running?</p>';
+            sub.textContent = '';
+            moreBtn.classList.add('hidden');
+            loading = false;
+            return;
+          }
+          grid.insertAdjacentHTML('beforeend', places.map(card).join(''));
+          sub.textContent = data.total != null ? data.total + ' places · page ' + data.page : '';
+          moreBtn.classList.toggle('hidden', !hasMore);
+          page += 1;
+        } catch (e) {
+          grid.innerHTML = '<p class="col-span-full text-center text-red-500">Could not load. Start the server (port 3000).</p>';
+        }
+        loading = false;
+      }
+
+      moreBtn.addEventListener('click', () => load(false));
+      load(true);
+    })();
+  </script>
+</body>
+</html>

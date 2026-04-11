@@ -5,13 +5,18 @@
   <title>Delhi Places</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body class="bg-gray-50">
   <div class="container mx-auto px-4 py-6">
     <div class="flex justify-between items-center mb-6">
       <h1 class="text-3xl font-bold text-gray-800">All <span class="text-red-500">Delhi</span> Places</h1>
-      <a href="index.html" class="text-red-500 hover:underline">← Back to Home</a>
+      <div class="text-right text-sm space-x-3">
+        <a href="all-places.html?city=Delhi" class="text-red-600 font-semibold hover:underline">Live app list</a>
+        <a href="index.html" class="text-red-500 hover:underline">← Home</a>
+      </div>
     </div>
+    <p class="text-sm text-gray-600 mb-4 p-3 bg-white rounded-lg border border-gray-200">Use <strong>Live app list</strong> for synced photos, filters, and reviews. Below: static reference; click a card when the API is running.</p>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
@@ -6369,5 +6374,8 @@
     
     </div>
   </div>
+<div id="wayease-footer-root"></div>
+<script src="app.js"></script>
+<script src="footer.js"></script>
 </body>
 </html>

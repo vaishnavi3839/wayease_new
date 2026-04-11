@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Itineraries</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+</head>
+<body class="bg-gray-50">
+  <main class="max-w-4xl mx-auto p-6">
+    <h1 class="text-2xl font-bold mb-3">My Itineraries</h1>
+    <a href="profile.html" class="text-blue-600">Back to profile</a>
+    <div id="list" class="space-y-2 mt-4"></div>
+  </main>
+  <script>
+    const API_BASE = location.protocol === 'file:' ? 'http://localhost:3000/api' : `${location.origin}/api`;
+    const token = localStorage.getItem('wayease_token');
+    if (!token) location.href = 'login.html';
+    fetch(`${API_BASE}/itinerary`, { headers: { Authorization: `Bearer ${token}` } })
+      .then((r) => r.json())
+      .then((d) => {
+        document.getElementById('list').innerHTML = (d.itineraries || []).map((x) => `<div class="bg-white border rounded p-3"><p class="font-medium">${x.title || x.city}</p><p class="text-xs text-gray-500">${x.days} days • ${x.city}</p></div>`).join('') || '<p>No itineraries yet.</p>';
+      });
+  </script>
+  <div id="wayease-footer-root"></div>
+  <script src="footer.js"></script>
+</body>
+</html>
